@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Parte del Navbar inicio */
+
+.navbar {
+  background-color: orange !important;
+}
+
+
+
+
+/* Parte del Navbar Fin */
