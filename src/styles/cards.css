@@ -1,0 +1,64 @@
+
+.card {
+    box-sizing: border-box;
+    margin-bottom:24px;
+    border-radius: 0px 0px 50px 50px;
+}
+
+
+.card:hover {
+    box-shadow:  5px 10px 20px 1px rgba(255,255,255,0.273) !important;
+    transition: all 0.5s linear;
+}
+
+.card-body {
+    padding: 2rem 0 !important
+}
+
+.card-text {
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+.card-img-top {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-img-top:hover {
+    transform: scale(1.8);
+}
+
+
+.buttonClass {
+    font-size:15px;
+    font-family:Arial;
+    width:140px;
+    height:50px;
+    border-width:1px;
+    color:#fff;
+    border-color:rgba(10, 10, 10, 1);
+    font-weight:bold;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    box-shadow: 3px 4px 0px 0px rgba(8, 63, 116, 1);
+    text-shadow: 0px 1px 0px #528ecc;
+    background:linear-gradient(rgba(7, 25, 44, 1), rgba(36, 83, 131, 1));
+  }
+  
+  .buttonClass:hover {
+    background: linear-gradient(rgba(36, 83, 131, 1), rgba(7, 25, 44, 1));
+  }
+             
+  .loginbutton {
+   
+    padding-bottom: .5em;
+    margin-right: .5em;
+  }
+  
+  

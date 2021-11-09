@@ -1,30 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-import './Shared/Header';
-import Header from './Shared/Header';
+
+import './styles/App.css';
+import './components/Header';
+import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
+ import Carrusel from './components/Carousel';
+import Cards from './components/Cards';
+import {BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+    <div className="App  ">
+      <header>
       <Header/>
-
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <Carrusel />
       </header>
+      <section>
+        <h1 className="text-center justify-content-center">Carreras a distancia</h1>
+      </section>
+     <container>
+      <Cards />
+      </container>
+      
     </div>
+    </Router>
   );
 }
 
