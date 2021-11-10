@@ -1,16 +1,27 @@
+*{
+  margin:0;
+  
+}
+
+footer {
+  width: 100%;
+  
+  bottom: 0; 
+}
+
 .App {
   
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
+  
+  
+ 
+  
   font-family: 'Encode Sans Expanded', sans-serif;
 }
 
 .buttonClass {
   font-size:15px;
   font-family:Arial;
-  width:136px;
+  width:100px;
   height:58px;
   border-width:3px;
   color:#fff;
@@ -47,3 +58,27 @@
 
 
 /* Parte del Navbar Fin */
+
+.enjoy-css {
+  
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  
+  
+  
+  
+  
+  
+  font: normal normal bold 39px/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: rgba(27,101,181,0.86);
+  
+  
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: 2px;
+  white-space: pre;
+  word-spacing: 12px;
+  text-shadow: 9px 8px 18px rgba(0,0,0,0.5) ;
+}
+
+

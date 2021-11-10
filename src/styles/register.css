@@ -1,0 +1,57 @@
+
+
+.students {
+  margin: 0 auto;
+  width: 60%;
+  margin-bottom:10rem;
+  border-color: white
+  
+  
+} 
+
+
+
+.wrapper {
+  margin-bottom:5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 100%;
+  max-width: 80vw;
+  height: 250px;
+  margin:0 auto;
+  border-radius: 4px;
+  
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  background:url(../assets/images/register.jpg);
+  background-size: cover;
+  
+}
+
+ .buttonClass-register {
+    margin-bottom:10rem;
+    margin-right:30rem;
+    font-size:15px;
+    font-family:Arial;
+    width:140px;
+    height:50px;
+    border-width:1px;
+    color:#fff;
+    border-color:rgba(10, 10, 10, 1);
+    font-weight:bold;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    box-shadow: 3px 4px 0px 0px rgba(8, 63, 116, 1);
+    text-shadow: 0px 1px 0px #528ecc;
+    background:linear-gradient(rgba(7, 25, 44, 1), rgba(36, 83, 131, 1));
+  }
+  
+  .buttonClass:hover {
+    background: linear-gradient(rgba(36, 83, 131, 1), rgba(7, 25, 44, 1));
+  }
+
+  

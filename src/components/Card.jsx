@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import PropTypes from 'prop-types'
 import '../styles/cards.css'
@@ -20,7 +21,8 @@ const Card = ({title, imageSource,url,text}) => {
                    
                
                </p>
-               <a href={url} className=" btn btn-outline-secondary" target="_blank">Entra a nuestra Biblioteca
+               
+               <a href="http://uca.edu.ar/es"  className="btn btn-outline-secondary" target="_blank">Entra a nuestra Biblioteca
                </a>
            </div>
        </div>

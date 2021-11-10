@@ -4,22 +4,26 @@ import '../styles/footer.css'
 
 function Footer() {
     return (
+        <footer>
         <div className="footer-container">
+            
             <section className="footer-subscription">
                 <p className="footer-subscription-heading">
-                    formulario
+                    
                 </p>
                 <p className="footer-subscription-text">
-                    formulario
+                    
                 </p>
                 <div className="input-areas">
                     <form>
-                        <input type="text" className="footer-input" />
+                        <h1>input</h1>
+                        <input className="button" placeholder="Your name ..." />
                     </form>
                 </div>
             </section>
             
         </div>
+        </footer>
     )
 }
 
