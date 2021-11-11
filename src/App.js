@@ -3,10 +3,6 @@ import './styles/App.css';
 import './components/Header';
 import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
- import Carrusel from './components/Carousel';
-import Cards from './components/Cards';
-import Register from './components/RegisterSection/Register';
-import Becas from './components/Becas/Becas';
 import Footer from './components/Footer';
 import {
   BrowserRouter as Router,
@@ -35,11 +31,21 @@ function App() {
       
       
       </header>
+      <div>
+        <h1>
+          seccion de noticias
+        </h1>
+      </div>
+      <div>
+        <h1>
+          Datos de covid hoy
+        </h1>
+      </div>
       <footer >
         <Footer />
       </footer>
       </div>
-     
+    
       </Router>
   );
 }

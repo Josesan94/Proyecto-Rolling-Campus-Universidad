@@ -27,7 +27,7 @@ function Header() {
                             
                           
                               <div className="loginbutton" >
-                              <Button className="buttonClass" to='/login'>Ingresar</Button>
+                              <Button  to='/login' className="buttonClass">Ingresar</Button>
                               </div>
                             <div >
                             <ReactBootStrap.Button className="buttonClass" to='/registro'>Crear una Cuenta</ReactBootStrap.Button>
