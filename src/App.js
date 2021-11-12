@@ -33,12 +33,12 @@ function App() {
       </header>
       <div>
         <h1>
-          seccion de noticias
+          
         </h1>
       </div>
       <div>
         <h1>
-          Datos de covid hoy
+          
         </h1>
       </div>
       <footer >
