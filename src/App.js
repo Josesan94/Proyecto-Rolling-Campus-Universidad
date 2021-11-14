@@ -35,22 +35,8 @@ function App() {
       </Routes>
       
       
-<<<<<<< HEAD
       
       
-=======
-      </header>
-      <div>
-        <h1>
-          
-        </h1>
-      </div>
-      <div>
-        <h1>
-          
-        </h1>
-      </div>
->>>>>>> 234517f6d8bfd9efb7f8331c923a0a44462a9f9e
       <footer >
         <Footer />
       </footer>
