@@ -44,7 +44,7 @@ footer {
 /* Parte del Navbar inicio */
 
 .navbar {
-  background-color: #3F5C93!important;
+  background-color: #ff9a3e!important;
   
   
   
@@ -78,4 +78,26 @@ footer {
   text-shadow: 9px 8px 18px rgba(0,0,0,0.5) ;
 }
 
+/* Acerca de Nosotros Inicio */
+.texto {
+  margin-left: 100px;
+  margin-right: 200px;
+  
+}
 
+.titulo {
+  text-align: center;
+}
+
+.cajasnosotros {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 100px;
+  margin-left: 100px;
+  margin-right: 200px;
+  
+
+}
+
+/* Acerca de Nosotros Fin */
