@@ -1,7 +1,4 @@
-*{
-  margin:0;
-  
-}
+
 
 footer {
   width: 100%;
@@ -10,12 +7,12 @@ footer {
 }
 
 .App {
-  
-  
+  background-color: rgba(183, 192, 240, 0.952);
+  font-family: 'Noto Sans', sans-serif;
   
  
   
-  font-family: 'Encode Sans Expanded', sans-serif;
+  
 }
 
 .buttonClass {

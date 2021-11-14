@@ -1,0 +1,10 @@
+.news{
+    margin:2rem;
+}
+
+.news-image{
+    margin:1rem 0rem 1rem 0rem;
+    border: 3px solid black;
+    border-radius: 35%;
+    
+}

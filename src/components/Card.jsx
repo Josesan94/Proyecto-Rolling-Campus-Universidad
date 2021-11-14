@@ -22,7 +22,7 @@ const Card = ({title, imageSource,url,text}) => {
                
                </p>
                
-               <a href="http://uca.edu.ar/es"  className="btn btn-outline-secondary" target="_blank">Entra a nuestra Biblioteca
+               <a href="http://uca.edu.ar/es"  className="btn btn-outline-secondary" target="_blank">Ingrese aqui
                </a>
            </div>
        </div>

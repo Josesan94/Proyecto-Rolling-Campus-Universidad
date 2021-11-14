@@ -15,12 +15,17 @@ import BecasPage from './pages/BecasPage';
 import Nosotros from './pages/Nosotros';
 import Carreras from './pages/Carreras/Carreras'
 
+
+
 function App() {
   return (
     <Router>
+      <body>
       <div className =" App">
       <header>
       <Header/>
+      </header>
+      
       <Routes>
           <Route exact path='/'  element={<Home/>} />
           <Route exact path='/becas'  element={<BecasPage/>} />
@@ -30,23 +35,15 @@ function App() {
       </Routes>
       
       
-      </header>
-      <div>
-        <h1>
-          seccion de noticias
-        </h1>
-      </div>
-      <div>
-        <h1>
-          Datos de covid hoy
-        </h1>
-      </div>
+      
+      
       <footer >
         <Footer />
       </footer>
       </div>
-    
+      </body>
       </Router>
+      
   );
 }
 
