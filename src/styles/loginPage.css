@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+	padding: 0px;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #E8E8E8;
+	font-family: 'Open Sans', sans-serif;
+    background: url('../assets/images/Durazno_Naranja_Europea_Elegante_Curvo_Texto_Logo_\(1\).png') no-repeat center center fixed;
+   background-size: cover;
+   
+}
+
+.contenedor {
+    
+    
+	
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+    
+}
+
+.formulario {
+	min-width: 600px;
+	margin-top: 50px;
+	
+	
+	padding: 20px;
+	;
+}
+
+.formulario > div {
+	margin-bottom: 20px;
+}
+
+.formulario label {
+	display: block;
+	font-weight: 600;
+	font-size: 14px;
+	margin-bottom: 5px;
+	color: #1f1f1f;
+}
+
+.formulario input,
+.formulario textarea {
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	border-radius: 5px;
+	border: 2px solid #e2e2e2;
+	font-size: 18px;
+	padding: 10px;
+	margin-bottom: 5px;
+	color: #1f1f1f;
+}
+
+.formulario input:focus {
+	outline: none;
+	border: 2px solid #f6f8fa;
+}
+
+.formulario .error {
+	color: #e92b2d;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.formulario button[type="submit"] {
+	display: block;
+	background: #f9f9fa;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	color: rgb(7, 0, 0);
+	font-size: 16px;
+	transition: .3s ease all;
+}
+
+.formulario button[type="submit"]:hover {
+	background: #ff9a3e;
+}
+
+.formulario .exito {
+	text-align: center;
+	font-size: 14px;
+	padding-top: 20px;
+	color: #02a802;
+}
+
+.formulario input[type="radio"] {
+	width: auto;
+}

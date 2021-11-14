@@ -48,14 +48,18 @@ function Header() {
             </ReactBootStrap.Nav>
             <ReactBootStrap.Nav>
               <div className="loginbutton">
-                <Button to="/login" className="buttonClass">
+                <Link to={"/login"}>
+                <Button  className="buttonClass">
                   Ingresar
                 </Button>
+                </Link>
               </div>
               <div>
-                <ReactBootStrap.Button className="buttonClass" to="/registro">
-                  Crear una Cuenta
-                </ReactBootStrap.Button>
+              <Link to={"/register"}>
+                <Button  className="buttonClass">
+                  Crea una cuenta
+                </Button>
+                </Link>
               </div>
             </ReactBootStrap.Nav>
           </ReactBootStrap.Navbar.Collapse>
