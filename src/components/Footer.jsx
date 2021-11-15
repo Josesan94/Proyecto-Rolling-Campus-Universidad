@@ -2,13 +2,16 @@ import React, { Fragment } from "react";
 //BOOSTRAP COMPONENTS
 import { Navbar, Container, Nav, Col, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import '../styles/footer.css'
 import Logo3 from "../assets/images/Logo.png";
+
 
 function Footer(props) {
   return (
     <Fragment>
-      <Navbar variant="dark">
-        <Container>
+      <div className="containn-footer"> 
+      <Navbar variant="dark" >
+        <Container >
           <Nav className="">
             <Row>
               <Col className="me-auto">
@@ -41,6 +44,7 @@ function Footer(props) {
           </Nav>
         </Container>
       </Navbar>
+      </div>
     </Fragment>
   );
 }

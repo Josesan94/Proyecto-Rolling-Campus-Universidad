@@ -45,7 +45,7 @@ function FormContact(props) {
   return (
     <Fragment>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h1>Escriba su consulta</h1>
+        <hr/>
         <input placeholder="Nombre" {...register("username")} />
         <input placeholder="Apellido" {...register("lastName")} />
         <input

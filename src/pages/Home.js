@@ -18,7 +18,7 @@ import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import SchoolIcon from '@material-ui/icons/School';
 import LaptopIcon from '@material-ui/icons/Laptop';
 import {Button as Mbutton} from '@material-ui/core';
-
+import FormContact from "../components/FormContact";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -356,7 +356,9 @@ function Home() {
        
     </div>
   
+    <div className="container pb-5">
     
+    </div>
    
 
          
