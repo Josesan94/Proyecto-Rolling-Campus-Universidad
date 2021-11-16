@@ -34,7 +34,11 @@ function Header() {
               >
                 Becas
               </ReactBootStrap.Nav.Link>
+<<<<<<< HEAD
               <ReactBootStrap.Nav.Link as={Link} to={'/nosotros'}>
+=======
+              <ReactBootStrap.Nav.Link as={Link} to={"/nosotros"}>
+>>>>>>> 696ee37fff55dc6dec51cfe56441b87d369bee92
                 Nosotros
               </ReactBootStrap.Nav.Link>
               <ReactBootStrap.NavDropdown
