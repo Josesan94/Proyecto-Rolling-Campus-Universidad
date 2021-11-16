@@ -1,131 +1,41 @@
 
 
-.logo-container{
-    background-color:#ffa163;
-    box-shadow: 1px 2px 5px 1px rgb(56, 56, 56,1);
-    border-top: 1px solid black
-}
-
-
-.img-grid{
+.logo-container {
+    background-color: #ffa163;
+    box-shadow: 1px 2px 5px 1px rgb(56, 56, 56, 1);
+    border-top: 1px solid black;
+  }
+  
+  .img-grid {
     overflow: hidden;
-    display:block;
+    display: block;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
-    border:none;
+    border: none;
     border-radius: 50%;
-    
-}
-
-.img-grid:hover{
+  }
+  
+  .img-grid:hover {
     box-shadow: 1px 2px 5px 1px rgb(10, 5, 0);
     transition: all 0.5s linear;
-}
-
-.text-univer{
-    
-    text-shadow: 0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 30px #fff,
-    0 0 40px #95bdf8,
-    0 0 70px #95bdf8,
-    0 0 80px #95bdf8,
-    0 0 100px #95bdf8,
-    0 0 150px #95bdf8;
-}
-
-.metric-block.theme-dark{
+  }
+  
+  .text-univer {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #95bdf8,
+      0 0 70px #95bdf8, 0 0 80px #95bdf8, 0 0 100px #95bdf8, 0 0 150px #95bdf8;
+  }
+  
+  .metric-block.theme-dark {
     background-color: rgb(255, 255, 255);
-    border-radius: 2%;
-    box-shadow: 1px 2px 5px 1px rgb(56, 56, 56,1);
-    
-}
-
-.cifer-row{
+    box-shadow: 1px 2px 5px 1px rgb(56, 56, 56, 1);
+  }
+  
+  .cifer-row {
     display: flex;
     flex-wrap: wrap;
-    margin-right:-15px;
-    margin-left:-15px;
-}
-
-
-.text-right {
-    text-align: center!important;
-}
-.text-left{
-    text-align: self !important;
-}
-
-.text-center {
-    text-align: center!important;
-}
-
-.col-8{
-    display:flex 0 0 66.66%;
-    max-width: 66.66%;
-    position:relative;
-    width: 100%;
-    padding-right: 15px;
-}
-
-.number .cifra {
-    font-size: 34px;
-    line-height: 40px;
-    font-weight: 700;
-    margin:0 auto;
-}
-
-.number .name {
-    font-size: 1.125rem;
-    line-height: 24px;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-.mb-1, .my-1 {
-    margin-bottom: 0.25rem!important;
-}
-
-
-@media screen and (min-width: 768px){
-.number .cifra {
-    font-size: 46px;
-    line-height: 52px;
-}
-}
-
-*, :after, :before {
-    box-sizing: border-box;
-}
-
-.box{
-    padding:32px 0px 16px;
-    border-top: 1px solid rgb(0, 0, 0);
-}
-
-.univ-info {
-    font-size: .875rem;
-    font-weight: 700;
-}
-
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-.role{
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-.button-more{
-    width: 40%;
-    position:relative;
-    justify-content: center;
-    padding:10px 10px 10px 10px
-}
-
+    margin-right: -15px;
+    margin-left: -15px;
+  }
 

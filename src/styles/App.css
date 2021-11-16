@@ -3,86 +3,90 @@
 
 
 .App {
-  background-color: rgba(183, 192, 240, 0.952);
+  background-color: hsl(231, 20%, 85%);
   font-family: 'Noto Sans', sans-serif;
-  
- 
-  
   
 }
 
 .buttonClass {
-  font-size:15px;
-  font-family:Arial;
-  width:100px;
-  height:58px;
-  border-width:3px;
-  color:#fff;
-  border-color:#1f2f47;
-  border-top-left-radius:29px;
-  border-top-right-radius:29px;
-  border-bottom-left-radius:29px;
-  border-bottom-right-radius:29px;
-  box-shadow:inset 0px 0px 15px 3px #23395e;
-  text-shadow:inset 0px 1px 0px #263666;
-  background:linear-gradient(#2e466e, #415989);
+  font-size: 15px;
+  font-family: Arial;
+  width: 100px;
+  height: 58px;
+  border-width: 3px;
+  color: #fff;
+  border-color: #1f2f47;
+  border-top-left-radius: 29px;
+  border-top-right-radius: 29px;
+  border-bottom-left-radius: 29px;
+  border-bottom-right-radius: 29px;
+  box-shadow: inset 0px 0px 15px 3px #23395e;
+  text-shadow: inset 0px 1px 0px #263666;
+  background: linear-gradient(#2e466e, #415989);
 }
 
 .buttonClass:hover {
   background: linear-gradient(#415989, #2e466e);
 }
 
-
-
-
-
-
 /* Parte del Navbar inicio */
 
-.navbar {
-  background-color: #ff9a3e!important;
-  
-  
-  
-  
+.header {
+  box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
-
-
+.navbar {
+  background-color: #ff9a3e !important;
+}
 
 /* Parte del Navbar Fin */
 
+.carrusel-container {
+  position: relative;
+  z-index: 0;
+}
+
 .enjoy-css {
-  
   padding-top: 3rem;
   padding-bottom: 2rem;
-  
-  
-  
-  
-  
-  
-  font: normal normal bold 39px/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  color: rgba(27,101,181,0.86);
-  
-  
+
+  font: normal normal bold 39px/1 'Lucida Sans Unicode', 'Lucida Grande',
+    sans-serif;
+  color: rgba(27, 101, 181, 0.86);
+
   -o-text-overflow: clip;
   text-overflow: clip;
   letter-spacing: 2px;
   white-space: pre;
   word-spacing: 12px;
-  text-shadow: 9px 8px 18px rgba(0,0,0,0.5) ;
+  text-shadow: 9px 8px 18px rgba(0, 0, 0, 0.5);
 }
 
 /* Acerca de Nosotros Inicio */
 .texto {
   margin-left: 100px;
   margin-right: 200px;
-  
+}
+
+.texto2 {
+  margin-left: 100px;
+  margin-right: 200px;
+  color: white;
 }
 
 .titulo {
   text-align: center;
+}
+
+.titulo3 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+.titulo2 {
+  margin-left: 100px;
 }
 
 .cajasnosotros {
@@ -92,8 +96,13 @@
   grid-auto-rows: 100px;
   margin-left: 100px;
   margin-right: 200px;
-  
+}
 
+.programacion {
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+  margin-bottom: 1%;
 }
 
 /* Acerca de Nosotros Fin */
