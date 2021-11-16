@@ -17,19 +17,19 @@ async function addTransaction(req, res) {
     if (error)
       return res.status(500).send({
         ok: false,
-        msg: "Error al crear usuario",
+        msg: "Error al crear la Transaccion",
         error,
       });
 
     if (!transaction)
       return res.status(404).send({
         ok: false,
-        msg: "No se pudo crear el usuario",
+        msg: "No se pudo crear la Transaccion",
       });
 
     return res.status(200).send({
       ok: true,
-      msg: "El usuario fue CREADO correctamente",
+      msg: "La Transaccion fue CREADA correctamente",
       transaction,
     });
   });
@@ -45,7 +45,7 @@ async function getTransactions(req, res) {
 
   res.status(200).send({
     ok: true,
-    msg: "Se obtuvieron los usuarios",
+    msg: "Se obtuvieron las Transacciones",
     transactions,
     total,
     per_page,
@@ -63,18 +63,18 @@ function getTransaction(req, res) {
     if (error)
       return res.status(500).send({
         ok: false,
-        msg: "Error al obtener usuario",
+        msg: "Error al obtener la Transaccion",
         error,
       });
     if (!transaction)
       return res.status(404).send({
         ok: false,
-        msg: "Usuario NO encontrado",
+        msg: "Transaccion NO encontrada",
         transaction,
       });
     return res.status(200).send({
       ok: true,
-      msg: "Usuario obtenido CORRECTAMENTE de la DB",
+      msg: "Transaccion obtenida CORRECTAMENTE de la DB",
       transaction,
     });
   });
