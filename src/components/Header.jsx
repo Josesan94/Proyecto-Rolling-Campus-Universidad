@@ -35,7 +35,7 @@ function Header() {
                 Becas
               </ReactBootStrap.Nav.Link>
               <ReactBootStrap.Nav.Link as={Link} to={"/nosotros"}>
-                Acerca de Nosotros
+                Nosotros
               </ReactBootStrap.Nav.Link>
               <ReactBootStrap.NavDropdown
                 title="Carrera Promocional"

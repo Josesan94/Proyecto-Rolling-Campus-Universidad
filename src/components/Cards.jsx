@@ -2,6 +2,10 @@ import React from "react";
 import Card from "./Card";
 import img1 from "../assets/images/library.jpg"
 import img2 from "../assets/images/Students.png"
+import img3 from "../assets/images/Estudiantes.jpg"
+import img4 from "../assets/images/lab.jpg"
+
+
 
 
 const cards = [

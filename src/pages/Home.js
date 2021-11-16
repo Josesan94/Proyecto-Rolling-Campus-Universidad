@@ -11,6 +11,9 @@ import "../styles/news.css";
 import "../styles/info.css"
 import { Card, Button } from "react-bootstrap";
 import news1 from "../assets/images/17-07-19merito (1).jpg";
+import news2 from "../assets/images/906901279380a788d217fdadb8ce0618.jpg"
+import news3 from "../assets/images/register.jpg"
+import news4 from "../assets/images/trofeo.jpg"
 import { Typography } from "@mui/material";
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -133,7 +136,7 @@ function Home() {
               bg="dark"
               text="light"
             >
-              <Card.Img src={news1} width="100%" className="news-image" />
+              <Card.Img src={news4} width="100%" className="news-image" />
               <Card.Body>
                 <Card.Title>
                   <Typography align="center" variant="h4" component="h4">
@@ -161,7 +164,7 @@ function Home() {
               bg="dark"
               text="light"
             >
-              <Card.Img src={news1} width="100%" className="news-image" />
+              <Card.Img src={news2} width="100%" className="news-image" />
               <Card.Body>
                 <Card.Title>
                   <Typography align="center" variant="h4">
@@ -189,7 +192,7 @@ function Home() {
               bg="dark"
               text="light"
             >
-              <Card.Img src={news1} width="100%" className="news-image" />
+              <Card.Img src={news3} width="100%" className="news-image" />
               <Card.Body>
                 <Card.Title>
                   <Typography align="center" variant="h4">

@@ -14,9 +14,10 @@ import Home from './pages/Home';
 import BecasPage from './pages/BecasPage';
 import Nosotros from './pages/Nosotros';
 import LoginPage from './pages/loginPage';
-import RegisterPage from './pages/RegisterPage';
+import RegisterPage from './pages/registerPage';
 import FormContact from './components/FormContact';
 import Footer2 from './components/footer2';
+import Carrera from './pages/Carreras/Carreras'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route exact path='/nosotros' element={<Nosotros/>} />
           <Route exact path='/login' element={<LoginPage/>} />
           <Route exact path='/register' element={<RegisterPage/>} />
+          <Route exact path='/Carreras' element={<Carrera/>}/>
       </Routes>
       
       
