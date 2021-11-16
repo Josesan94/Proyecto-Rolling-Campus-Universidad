@@ -15,18 +15,16 @@ import BecasPage from './pages/BecasPage';
 import Nosotros from './pages/Nosotros';
 import LoginPage from './pages/loginPage';
 import RegisterPage from './pages/RegisterPage';
-import FormContact from './components/FormContact';
 import Footer2 from './components/footer2';
-
+import ProfilePage from './pages/ProfilePage';
+import CustomizedTables from './components/UserData/UserData';
 
 function App() {
   return (
     <Router>
       <body>
       <div className =" App">
-      <header>
-      <Header/>
-      </header>
+      
       
       <Routes>
           <Route exact path='/'  element={<Home/>} />
@@ -34,6 +32,8 @@ function App() {
           <Route exact path='/nosotros' element={<Nosotros/>} />
           <Route exact path='/login' element={<LoginPage/>} />
           <Route exact path='/register' element={<RegisterPage/>} />
+          <Route exact path='/profile' element={<ProfilePage/>}/>
+          <Route exact path='/data' element={<CustomizedTables/>}/>
       </Routes>
       
       
@@ -41,7 +41,7 @@ function App() {
       
       
         
-        <Footer2 />
+        
       
       </div>
       </body>

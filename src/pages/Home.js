@@ -1,7 +1,7 @@
 import React from "react";
 import Carrusel from "../components/Carousel";
-
-import Register from "../components/RegisterSection/Register";
+import Header from "../components/Header";
+import Footer2 from "../components/footer2";
 import Cards from "../components/Cards";
 import Becas from "../components/Becas/Becas";
 import logito from "../assets/images/Durazno_Naranja_Europea_Elegante_Curvo_Texto_Logo_(1).png";
@@ -18,7 +18,7 @@ import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import SchoolIcon from '@material-ui/icons/School';
 import LaptopIcon from '@material-ui/icons/Laptop';
 import {Button as Mbutton} from '@material-ui/core';
-import FormContact from "../components/FormContact";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,6 +46,9 @@ function Home() {
   };
   return (
     <div>
+      <header>
+      <Header/>
+      </header>
       <Carrusel />
       <div className="container-fluid d-flex justify-content-center m-5">
         <div className="container">
@@ -361,8 +364,9 @@ function Home() {
     </div>
    
 
-         
+    <Footer2 />
     </div>
+    
   );
 }
 

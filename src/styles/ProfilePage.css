@@ -1,0 +1,144 @@
+
+
+.profile-body{
+	font-size: 1rem; 
+    background-color: rgba(183, 192, 240, 0.952);
+    
+    
+    
+    
+}
+
+.profile-font{
+    box-sizing: content-box;
+    justify-content: center;
+    align-items: center;
+    color: rgb(68, 67, 67);
+}
+
+.car-description .button-profile {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.car-description{
+    color: hsla(0, 0%, 100%, 0.75);
+}
+
+.profile-main{
+    display : grid; /*coloco un grid en el elemento padre, que es el <ul>, lo que lo convierte en un grid container. Por lo tanto los elementos <li> seran grid items de ese grid */
+    grid-template-columns: repeat(auto-fill, 230px);
+    gap: 40px; /*separacion entre los elementos */
+    padding: 40px;  /*separacion con los bordes */
+    justify-content: center; /*tenemos los elementos justificados en el centro */
+}
+
+@media (max-width:560px) {
+    .profile-main {
+        grid-template-columns: 100%;
+    }
+} /* cuando el ancho de mi pagina vaya de 0 a 560 px, en vez de tener una grilla de columna de 230px, va a ser una sola columna que tenga el 100% del ancho */
+
+.sedans, .suvs, .luxury {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 4.5rem;
+}
+@media (min-width: 37.5em) {
+    .sedans, .suvs, .luxury {
+        padding: 4rem;
+    }
+}
+
+
+
+
+
+
+.car-description {
+    line-height: 180%;
+}
+
+
+
+
+
+.sedans {
+    background-color: hsl(31, 77%, 52%);
+    border-radius: 6px 6px 0 0;
+    box-shadow: 10px 10px 10px rgba(255, 153, 35, 0.952);
+}
+@media (min-width: 37.5em) {
+    .sedans {
+        border-radius: 6px 0 0 6px;
+    }
+}
+
+.suvs {
+    background-color: hsl(34, 100%, 69%);
+}
+
+.luxury {
+    background-color: hsl(41, 92%, 86%);
+    border-radius: 0 0 6px 6px;
+    box-shadow: 10px 10px 10px rgba(255, 153, 35, 0.952);
+}
+@media (min-width: 37.5em) {
+    .luxury {
+        border-radius: 0 6px 6px 0;
+    }
+}
+
+
+
+
+/* BUTTON */
+
+.button-profile {
+    padding: 0.8em 1.5em;
+    border-radius: 50px;
+    border: 2px solid hsl(0, 0%, 95%);
+    background-color: hsl(0, 0%, 95%);
+    margin-top: 1rem;
+}
+
+.sedans .button-profile {
+    color: hsl(31, 77%, 52%);
+}
+
+.suvs .button-profile {
+    color: hsl(184, 100%, 22%);
+}
+
+.luxury .button-profile {
+    color: hsl(179, 100%, 13%);
+}
+
+
+/* BUTTON:HOVER */
+
+.button-profile:hover {
+    color: hsl(0, 0%, 95%);
+    border: 2px solid hsl(0, 0%, 95%);
+}
+
+.sedans .button-profile:hover {
+    background-color: hsl(31, 77%, 52%);
+}
+
+.suvs .button-profile:hover {
+    background-color: hsl(184, 100%, 22%);
+}
+
+.luxury .button-profile:hover {
+    background-color: hsl(179, 100%, 13%);
+}
+
+
+
+
+
+.profile-cont{
+    
+}

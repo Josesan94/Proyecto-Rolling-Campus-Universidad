@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 * {
+	
 	padding: 0px;
 	margin: 0;
 	box-sizing: border-box;
 }
 
 body {
-	background: #E8E8E8;
+	background-color: rgba(183, 192, 240, 0.952);;
 	font-family: 'Open Sans', sans-serif;
-    background: url('../assets/images/Durazno_Naranja_Europea_Elegante_Curvo_Texto_Logo_\(1\).png') no-repeat center center fixed;
-   background-size: cover;
+    
    
 }
 
 .contenedor {
     
     
-	
+	margin-bottom: 10px;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -25,11 +25,13 @@ body {
 }
 
 .formulario {
+	border: 2px solid rgb(255, 174, 81);
+	box-shadow: 5px 10px 10px 2px gray;
 	min-width: 600px;
 	margin-top: 50px;
 	
 	
-	padding: 20px;
+	padding: 25px;
 	;
 }
 

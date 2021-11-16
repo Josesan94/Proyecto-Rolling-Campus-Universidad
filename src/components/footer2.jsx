@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from './Button';
 import '../styles/footer.css'
 import Logo3 from "../assets/images/Logo.png";
 import FormContact from "./FormContact";

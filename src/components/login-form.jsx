@@ -1,12 +1,12 @@
-import React  from 'react';
-import { Formik } from 'formik';
+import React, {useState}  from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import '../styles/loginPage.css'
-
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 	
 
-	
+	const [formularioEnviado, setFormularioEnviado] = useState(false);
 
 	return (
 		<>
@@ -34,47 +34,53 @@ const Login = () => {
 			return errores;
 			
 			}}
-			onSubmit = {(valores) =>{
-				console.log(valores)
-				console.log('formulario enviado')
+			onSubmit = {(valores, {resetForm}) =>{
+				resetForm()
+				console.log('Formulario enviado')
+				setFormularioEnviado(true)
+				setTimeout(() => setFormularioEnviado(false), 5000)
+				
 			}}
 		>
-			{({values, errors,  handleSubmit, handleChange, handleBlur}) => (
+			{({ errors }) => (
 
 			
-			<form action="" onSubmit={handleSubmit} className="formulario">
+			<Form className="formulario">
 				 
 				<div>
 					<label htmlFor="nombre">Nombre</label>
-					<input
+					<Field
 						type="text"
 						name="nombre"
 						placeholder="Nombre"
 						id="nombre"
-						value={values.nombre}
-						onChange={handleChange}
-						onBlur={handleBlur}
+						
 					/>
-					{errors.nombre ? (<div className="error">{errors.nombre}</div>) : ""}
+					<ErrorMessage name="nombre" component={() => (
+                          <div className="error">{errors.nombre}</div>
+					)}/>
+					
 				</div>
 
 				<div>
 					<label htmlFor="correo">Correo</label>
-					<input
+					<Field
 						type="email"
 						name="correo"
 						placeholder="Correo"
 						id="correo"
-						value={values.correo}
-						onChange={handleChange}
-						onBlur={handleBlur}
+						
 
 					/>
-					{errors.correo ? (<div className="error">{errors.correo}</div>) : ""}
+					<ErrorMessage name="correo" component={() => (
+                          <div className="error">{errors.correo}</div>
+					)}/>
 				</div>
-
+                <Link to={'/profile'}> 
 				<button type="submit">Enviar</button>
-			</form>
+				</Link>
+				{(formularioEnviado) ? <p className="exito">usuario logeado!</p> : ""}
+			</Form>
 			)}
 			</Formik>
 		</>

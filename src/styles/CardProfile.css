@@ -1,0 +1,58 @@
+.card-profile {
+    background: rgb(231, 231, 231);
+    color: var(--colorLetra);
+    padding: 1.5rem;
+    box-shadow: 7px 7px 20px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    transition: transform 500ms ease;
+  }
+  .card-profile .card-icon {
+    font-size: 4rem;
+    color: var(--colorLetra);
+  }
+  .card-profile .card-title {
+    font-size: 1.4rem;
+  }
+  .card-profile .card-footer {
+    margin-top: 25px;
+    padding: 10px;
+    border-top: 1px solid var(--colorLetra);
+    width: 100%;
+    text-align: center;
+    background-color: rgb(231, 231, 231);
+  }
+  @media (hover) {
+    .card-profile:hover,
+    .card-profile:focus-within {
+      transform: scale(1.01);
+    }
+  }
+  @media (max-width: 400px) {
+    .card-profile {
+      width: 85% ;
+    }
+  }
+  @media (min-width: 501px) and (max-width: 991px) {
+    .card-profile {
+      width: 60%;
+    }
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .card-profile {
+      width: 45%;
+    }
+  }
+  @media (min-width: 1200px) and (max-width: 1399px){
+    .card-profile {
+      width: 40%;
+    }
+  }
+  @media (min-width: 1400px) {
+    .card-profile {
+      width: 30%;
+    }
+  }
