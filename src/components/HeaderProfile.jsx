@@ -7,7 +7,7 @@ import Logo3 from "../assets/images/Logo.png";
 function HeaderProfile() {
   return (
     <Fragment>
-      <ReactBootStrap.Navbar collapseOnSelect expand="lg" variant="dark" className="mb-5">
+      <ReactBootStrap.Navbar collapseOnSelect expand="lg" variant="dark" className="">
         <ReactBootStrap.Container>
           <ReactBootStrap.Navbar.Brand href="#home">
             <img

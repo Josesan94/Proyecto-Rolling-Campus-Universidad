@@ -22,6 +22,7 @@ import SchoolIcon from '@material-ui/icons/School';
 import LaptopIcon from '@material-ui/icons/Laptop';
 import { Button as Mbutton } from '@material-ui/core';
 import FormContact from '../components/FormContact';
+import Footer2 from '../components/footer2';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -317,6 +318,7 @@ function Home() {
           <div className="row d-flex justify-content-center m-1"></div>
         </div>
       </div>
+      <Footer2 />
     </div>
     </>
   );

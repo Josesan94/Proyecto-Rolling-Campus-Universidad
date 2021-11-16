@@ -9,6 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import { FormControlLabel } from "@material-ui/core";
 
 import {  Link}   from "react-router-dom";
+import Footer2 from '../footer2'
 
 const cardss = [
   {
@@ -45,7 +46,7 @@ const CardsProfile = () => {
   };
 
   return (
-    <div class="container">
+    <div>    <div class="container">
         <div class="row">
         <div
             class="
@@ -68,7 +69,7 @@ const CardsProfile = () => {
                 align-items-center
                 placaFondo
               "
-              style={{background:"gray", boxShadow:"7px 7px 20px black",borderRadius:"10%"}}
+              style={{background:"gray", boxShadow:"7px 7px 20px black",borderRadius:"1%"}}
             >
                 <div class="row titulo"><h3> Mi Perfil</h3></div>
       <Grid
@@ -103,57 +104,48 @@ const CardsProfile = () => {
                   <div className="card-icon">
                     <i className="fas fa-ambulance"></i>
                   </div>
-                  <div className="card-title">Sala de emergencias</div>
+                  <div className="card-title">Historia Academica</div>
                   <div className="card-content">
-                    Contamos con servicio de guardia las 24hs y dos ambulancias
-                    propias de la institución para traslados programados y no
-                    programados.
+                    Chequea tu historial academico por año, materia y fecha de cursada.
                   </div>
                   <div className="card-footer">
                     <a
                       href="/pages/"
                       style={{textDdecoration: "none", color: "var(--colorLetra)"}}
                       className="letraContraste"
-                      >Saber más</a
-                    >
+                      >Saber más</a>
                   </div>
                 </div>
                 <div className="card-profile">
                   <div className="card-icon">
                     <i className="fas fa-ambulance"></i>
                   </div>
-                  <div className="card-title">Sala de emergencias</div>
+                  <div className="card-title">Genera tu cupon pago</div>
                   <div className="card-content">
-                    Contamos con servicio de guardia las 24hs y dos ambulancias
-                    propias de la institución para traslados programados y no
-                    programados.
+                    Realiza los pagos de cuotas, aranceles y demas dentro de nuestro sistema de gestion de pagos
                   </div>
                   <div className="card-footer">
                     <a
                       href="/pages/"
                       style={{textDdecoration: "none", color: "var(--colorLetra)"}}
                       className="letraContraste"
-                      >Saber más</a
-                    >
+                      >Saber más</a>
                   </div>
                 </div>
                 <div className="card-profile">
                   <div className="card-icon">
                     <i className="fas fa-ambulance"></i>
                   </div>
-                  <div className="card-title">Sala de emergencias</div>
+                  <div className="card-title">Acredita tu pago</div>
                   <div className="card-content">
-                    Contamos con servicio de guardia las 24hs y dos ambulancias
-                    propias de la institución para traslados programados y no
-                    programados.
+                    Genera la acreditacion de tu pago de manera rapida y sencilla
                   </div>
                   <div className="card-footer">
                     <a
                       href="/pages/"
                       style={{textDdecoration: "none", color: "var(--colorLetra)"}}
                       className="letraContraste"
-                      >Saber más</a
-                    >
+                      >Saber más</a >
                   </div>
                 </div>
         </div>
@@ -161,8 +153,11 @@ const CardsProfile = () => {
         
       </div>
       </div>
-      </div>
       
+      </div>
+      <Footer2 />
+      </div>
+
   );
 };
 
