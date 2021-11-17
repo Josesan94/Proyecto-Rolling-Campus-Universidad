@@ -14,18 +14,10 @@ import Home from './pages/Home';
 import BecasPage from './pages/BecasPage';
 import Nosotros from './pages/Nosotros';
 import LoginPage from './pages/loginPage';
-<<<<<<< HEAD
 import RegisterPage from './pages/RegisterPage';
-import Footer2 from './components/footer2';
+
 import ProfilePage from './pages/ProfilePage';
 import CustomizedTables from './components/UserData/UserData';
-=======
-import RegisterPage from './pages/registerPage';
-import FormContact from './components/FormContact';
-import Footer2 from './components/footer2';
-import Carrera from './pages/Carreras/Carreras'
-
->>>>>>> 696ee37fff55dc6dec51cfe56441b87d369bee92
 
 function App() {
   return (
@@ -40,12 +32,8 @@ function App() {
           <Route exact path='/nosotros' element={<Nosotros/>} />
           <Route exact path='/login' element={<LoginPage/>} />
           <Route exact path='/register' element={<RegisterPage/>} />
-<<<<<<< HEAD
           <Route exact path='/profile' element={<ProfilePage/>}/>
           <Route exact path='/data' element={<CustomizedTables/>}/>
-=======
-          <Route exact path='/Carreras' element={<Carrera/>}/>
->>>>>>> 696ee37fff55dc6dec51cfe56441b87d369bee92
       </Routes>
       
       
