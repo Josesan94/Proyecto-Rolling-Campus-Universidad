@@ -1,10 +1,20 @@
 import React, {useState}  from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import '../styles/loginPage.css'
+import * as yup from 'yup'
 
+import axios from 'axios'
+
+const PASSWORD_REGEX= /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+
+const NUMBER_REGEX = /(^\+[1-9]{1}[0-9]{3,14}$)/ ;
+
+ 
 
 const Register = () => {
 	const [formularioEnviado, setFormularioEnviado] = useState(false);
+	const [error, setError] = useState(null);
+	
 
 	return (
 		<>
@@ -14,6 +24,7 @@ const Register = () => {
 				apellido:'',
 				correo: '',
 				contraseña: '',
+				confirmarContraseña: '',
 				celular:'',
 				direccion:'',
 				puesto:'',
@@ -21,34 +32,53 @@ const Register = () => {
 
 
 			}}
-			validate ={(valores) => {
-				let errores = {};
-              //validacion nombre
-            if(!valores.nombre) {
-				errores.nombre = 'por favor ingresa un nombre'
-			} else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
-				errores.nombre = 'el nombre solo puede contener letras y espacios'
-			}
 
-               //validacion correo
-			if(!valores.correo) {
-				errores.correo = 'por favor ingresa un correo'
-			} else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.correo)) {
-				errores.correo = 'el correo solo puede contener letras, numeros, puntos, guiones y guion bajo.'
-			}
 
-			return errores;
+			validationSchema = {yup.object({
+				nombre: yup.string().min(3,"Coloque su nombre correctamente").required(),
+				apellido: yup.string().min(3,"Coloque su apellido correctamente").required(),
+				correo:yup.string().email("coloque una direccion de correo valida").required(),
+				// celular: yup.string().matches(NUMBER_REGEX, "Debe ingresar un numero valido").required() ,
+				contraseña: yup.string().matches( PASSWORD_REGEX,"Debe crear una contraseña mas fuerte").required(),
+				confirmarContraseña:yup
+				.string()
+				.required("por favor, confirma tu contraseña")
+				.when("contraseña",{
+					is: val => (val && val.length > 0 ? true : false),
+					then: yup.string().oneOf([yup.ref("contraseña")], "las contraseñas no coinciden" )
+				})
+			})}
+
 			
-			}}
-			onSubmit = {(valores, {resetForm}) =>{
-				resetForm()
+
+
+			 onSubmit =   { async (valores, {resetForm}) =>{
+				const {confirmarContraseña,...data} = valores;
+
+				const response =  await axios.post('http://localhost:3002/api/register', data)
+				.catch((err) => {
+					if(err & err.response)
+					setError(error.response.data.message)
+					setFormularioEnviado(null)
+				});
+
+				if (response && response.data) {
+                    setFormularioEnviado(response.data.message)
+					resetForm()
+					setError(null)
+					setTimeout(() => setFormularioEnviado(false), 4000)
+				}
+
+				
 				console.log('Formulario enviado')
 				setFormularioEnviado(true)
-				setTimeout(() => setFormularioEnviado(false), 5000)
+				
 				
 			}}
+           
+
 		>
-			{({ errors }) => (
+			{() => (
 
 			
 			<Form className="formulario">
@@ -62,9 +92,7 @@ const Register = () => {
 						id="nombre"
 						
 					/>
-					<ErrorMessage name="nombre" component={() => (
-                          <div className="error">{errors.nombre}</div>
-					)}/>
+					<p style={{ color: "red" }}><ErrorMessage name="nombre"  /></p>
 					
 				</div>
 				<div>
@@ -76,9 +104,7 @@ const Register = () => {
 						id="apellido"
 						
 					/>
-					<ErrorMessage name="apellido" component={() => (
-                          <div className="error">{errors.apellido}</div>
-					)}/>
+					<p style={{ color: "red" }}><ErrorMessage name="apellido"  /></p>
 					
 				</div>
 
@@ -92,9 +118,7 @@ const Register = () => {
 						
 
 					/>
-					<ErrorMessage name="correo" component={() => (
-                          <div className="error">{errors.correo}</div>
-					)}/>
+					<p style={{ color: "red" }}><ErrorMessage name="correo"  /></p>
 				</div>
 				<div>
 					<label htmlFor="celular">Celular</label>
@@ -106,9 +130,7 @@ const Register = () => {
 						
 
 					/>
-					<ErrorMessage name="celular" component={() => (
-                          <div className="error">{errors.celular}</div>
-					)}/>
+					<p style={{ color: "red" }}><ErrorMessage name="celular"  /></p>
 				</div>
 				<div>
 					<label htmlFor="direccion">Direccion</label>
@@ -120,9 +142,7 @@ const Register = () => {
 						
 
 					/>
-					<ErrorMessage name="direccion" component={() => (
-                          <div className="error">{errors.direccion}</div>
-					)}/>
+					<ErrorMessage name="direccion" />
 				</div>
 				
 				
@@ -136,9 +156,19 @@ const Register = () => {
 						
 
 					/>
-					<ErrorMessage name="contraseña" component={() => (
-                          <div className="error">{errors.contraseña}</div>
-					)}/>
+					<p style={{ color: "red" }}><ErrorMessage name="contraseña"  /></p>
+				</div>
+				<div>
+					<label htmlFor="confirmarContraseña">Confirmar Contraseña</label>
+					<Field
+						type="password"
+						name="confirmarContraseña"
+						placeholder="confirmar Contraseña"
+						id="confirmarContraseña"
+						
+
+					/>
+					<p style={{ color: "red" }}><ErrorMessage name="confirmarContraseña"  /></p>
 				</div>
 				<div>
 					<label htmlFor="puesto">Puesto</label>
@@ -150,15 +180,14 @@ const Register = () => {
 						
 
 					/>
-					<ErrorMessage name="contraseña" component={() => (
-                          <div className="error">{errors.puesto}</div>
-					)}/>
+					<ErrorMessage name="puesto" />
 				</div>
 
 
 
-				<button type="submit">Enviar</button>
+				<button type="submit" >Enviar</button>
 				{(formularioEnviado) ? <p className="exito">usuario logeado!</p> : ""}
+				{(!formularioEnviado) ? <p className="error">{error}</p> : ""}
 			</Form>
 			)}
 			</Formik>
