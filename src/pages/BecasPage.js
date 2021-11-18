@@ -1,9 +1,11 @@
 import React from 'react'
+import Header from "../components/Header";
 
 function BecasPage() {
     return (
-        <div>
-            <div>
+        <div className="container-xxl">
+             <Header />
+            <div className="author">
             <h1>Beneficios Arancelarios</h1>
             <p className="texto">El Principio del funcionamiento del Sistema se asienta en la implementación de una política institucional que busca estimular el desarrollo de talento por un apoyo especial a los estudiantes que muestren un desempeño académico notable y que, por este compromiso con su formación, sean merecedores de una distinción especial, como así también, apoyar a los alumnos cuya situación económica desfavorable ponga en riesgo la continuidad de sus estudios y, en sentido de comunidad, a aquellos parientes directos de alumnos, docentes, administrativos y personal de apoyo designado de la Universidad.</p>
             <br></br> <br></br>

@@ -15,18 +15,18 @@
   height: 58px;
   border-width: 3px;
   color: #fff;
-  border-color: #1f2f47;
-  border-top-left-radius: 29px;
-  border-top-right-radius: 29px;
-  border-bottom-left-radius: 29px;
-  border-bottom-right-radius: 29px;
+  border-top-left-radius: 20px!important;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px !important;
   box-shadow: inset 0px 0px 15px 3px #23395e;
-  text-shadow: inset 0px 1px 0px #263666;
-  background: linear-gradient(#2e466e, #415989);
+  text-shadow: inset 0px 1px 0px #9b3208 !important;
+  background: linear-gradient(#ff5b0f, #804f22) !important;
+  text-decoration: none !important;
 }
 
 .buttonClass:hover {
-  background: linear-gradient(#415989, #2e466e);
+  background: linear-gradient(#b85a43, #1a1a19) !important;
 }
 
 /* Parte del Navbar inicio */
@@ -40,6 +40,7 @@
 .navbar {
   background-color: #ff9a3e !important;
 }
+
 
 /* Parte del Navbar Fin */
 
@@ -66,8 +67,8 @@
 
 /* Acerca de Nosotros Inicio */
 .texto {
-  margin-left: 100px;
-  margin-right: 200px;
+  margin-left:8%;
+  margin-right: 8%;
 }
 
 .texto2 {
@@ -92,21 +93,9 @@
 }
 
 .titulo2 {
-<<<<<<< HEAD
-  margin-left: 100px;
-=======
-  margin-left:100px;
->>>>>>> 696ee37fff55dc6dec51cfe56441b87d369bee92
+  margin-left: 8%;
 }
 
-.cajasnosotros {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: 100px;
-  margin-left: 100px;
-  margin-right: 200px;
-}
 
 .programacion {
   height: 50px;
@@ -115,15 +104,10 @@
   margin-bottom: 1%;
 }
 
-<<<<<<< HEAD
-/* Acerca de Nosotros Fin */
-=======
-.programacion {
-  height: 50px;
-  width: 50px;
-  margin-left: 10px;
-  margin-bottom: 1%;
+
+
+.imagenNosotros {
+ margin-left: 45%;
 }
 
 /* Acerca de Nosotros Fin */
->>>>>>> 696ee37fff55dc6dec51cfe56441b87d369bee92

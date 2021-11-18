@@ -6,19 +6,6 @@ import Cards from '../components/Cards';
 import Becas from '../components/Becas/Becas';
 import logito from '../assets/images/Durazno_Naranja_Europea_Elegante_Curvo_Texto_Logo_(1).png';
 import logito2 from '../assets/images/Distribucion porcentual del alumnado historico.jpg';
-<<<<<<< HEAD
-import logito3 from '../assets/images/diseño.jpg';
-import '../styles/news.css';
-import '../styles/info.css';
-import { Card, Button } from 'react-bootstrap';
-import news1 from '../assets/images/17-07-19merito (1).jpg';
-import news2 from '../assets/images/906901279380a788d217fdadb8ce0618.jpg';
-import news3 from '../assets/images/register.jpg';
-import news4 from '../assets/images/register.jpg';
-import { Typography } from '@mui/material';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-=======
 import logito3 from '../assets/images/diseño.jpg'
 import "../styles/news.css";
 import "../styles/info.css"
@@ -30,7 +17,6 @@ import news4 from "../assets/images/trofeo.jpg"
 import { Typography } from "@mui/material";
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
->>>>>>> 696ee37fff55dc6dec51cfe56441b87d369bee92
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import SchoolIcon from '@material-ui/icons/School';
 import LaptopIcon from '@material-ui/icons/Laptop';

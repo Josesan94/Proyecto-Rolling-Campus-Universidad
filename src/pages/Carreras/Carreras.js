@@ -1,9 +1,10 @@
 import React from 'react'
 import promo from '../../assets/images/Program.jpg'
+import Header from "../../components/Header";
 
 function Carreras() {
     return (
-        <div>
+        <div> <Header />
             <div className="programacion">
                 <img src={promo}/>
             </div>
@@ -20,7 +21,10 @@ potencial de crecimiento.</p>
             <p className="texto2">- tener elementos que le faciliten el trabajo en grupo, tanto en lo actitudinal (compartir conocimientos, privilegiar colaboración a competencia, organizar tareas) como en lo técnico (conocer herramientas y entornos).</p>
             <p className="texto2">- incorporar a su práctica nuevas herramientas que vayan apareciendo en el ámbito profesional.</p>
             <p className="texto2">- comprender que las actividades de programación se inscriben muchas veces en un marco más amplio de proyectos de desarrollo de software, y cuáles son sus roles específicos dentro de un equipo de proyecto.</p>
-        </div>
+        
+     
+        </div> 
+       
     )
 }
 
