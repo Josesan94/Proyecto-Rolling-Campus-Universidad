@@ -12,10 +12,12 @@ const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 19px;
-  background-color: #fff;
+  background-color: #f6f7fc;
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
   overflow: hidden;
+  margin-top: 3rem;
+  margin-bottom:3rem;
 `;
 
 const TopContainer = styled.div`
@@ -41,8 +43,8 @@ const BackDrop = styled(motion.div)`
   background: rgb(0, 0, 0);
   background: linear-gradient(
     58deg,
-    rgba(241, 196, 15, 1) 20%,
-    #ffae00 100%
+    #f88d28 20%,
+    #aab6fc 100%
   );
 `;
 
@@ -137,16 +139,16 @@ export function AccountBox(props) {
           />
           {active === "signin" && (
             <HeaderContainer>
-              <HeaderText>Welcome</HeaderText>
-              <HeaderText>Back</HeaderText>
-              <SmallText>Please sign-in to continue!</SmallText>
+              <HeaderText>Bienvenido </HeaderText>
+              <HeaderText>al campus virtual</HeaderText>
+              <SmallText>Ingresa tus datos para ingresar a tu cuenta</SmallText>
             </HeaderContainer>
           )}
           {active === "signup" && (
             <HeaderContainer>
-              <HeaderText>Create</HeaderText>
-              <HeaderText>Account</HeaderText>
-              <SmallText>Please sign-up to continue!</SmallText>
+              <HeaderText>Registrese</HeaderText>
+              <HeaderText>en nuestro campus</HeaderText>
+              <SmallText>Aqui abajo coloca tus datos</SmallText>
             </HeaderContainer>
           )}
         </TopContainer>

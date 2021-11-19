@@ -44,7 +44,7 @@ function FormContact(props) {
   console.log(errors);
   return (
     <Fragment>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit) } className="contact-form">
         <hr/>
         <input placeholder="Nombre" {...register("username")} />
         <input placeholder="Apellido" {...register("lastName")} />

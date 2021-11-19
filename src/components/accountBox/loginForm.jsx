@@ -10,11 +10,12 @@ import {
   FormError,
   Input,
   MutedLink,
-  SubmitButton,
+  ButtonSub,
 } from "./common";
 import { AccountContext } from "./accountContext";
 import * as yup from "yup";
 import axios from "axios";
+import Link from "react-router-dom";
 
 const validationSchema = yup.object({
   email: yup.string().required(),
@@ -26,15 +27,17 @@ export function LoginForm(props) {
   const [error, setError] = useState(null);
 
   const onSubmit = async (values) => {
+    console.log(values)
     setError(null);
     const response = await axios
-      .post("http://localhost:5000/api/v1/login", values)
+      .post("http://localhost:3002/api/login", values)
       .catch((err) => {
         if (err && err.response) setError(err.response.data.message);
+        console.log("error",err)
       });
 
     if (response) {
-      alert("Welcome back in. Authenticating...");
+      alert("Autenticando usuario...");
     }
   };
 
@@ -83,18 +86,25 @@ export function LoginForm(props) {
           }
         </FieldContainer>
         <MutedLink href="#">Forgot Password?</MutedLink>
-        <Marginer direction="vertical" margin="1em" />
-        <SubmitButton type="submit" disabled={!formik.isValid}>
-          Login
-        </SubmitButton>
+        <Marginer direction="vertical" margin={10} />
+        
+        <ButtonSub type="submit" disabled={!formik.isValid}>
+          Ingresar 
+        </ButtonSub>
+        
       </FormContainer>
-      <Marginer direction="vertical" margin={5} />
+      
+     
+      <Marginer direction="vertical" margin={10} />
+     
+      
       <MutedLink href="#">
-        Dont have an Account?
+        Todavia no tenes una cuenta?
         <BoldLink href="#" onClick={switchToSignup}>
-          sign up
+          Registrate
         </BoldLink>
       </MutedLink>
+      <Marginer direction="vertical" margin={5} />
     </BoxContainer>
   );
 }

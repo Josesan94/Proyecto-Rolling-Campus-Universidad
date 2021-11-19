@@ -80,7 +80,7 @@ const CardsProfile = () => {
         spacing={2}
       >
         <Grid item xs>
-          <Link to={"/data"}>
+          <Link to={"/tables"}>
             <h1>Mis datos</h1>
           </Link>
         </Grid>

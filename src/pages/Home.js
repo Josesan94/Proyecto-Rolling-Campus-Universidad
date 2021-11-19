@@ -1,7 +1,7 @@
 import React from 'react';
 import Carrusel from '../components/Carousel';
 import Header from '../components/Header';
-import Register from '../components/RegisterSection/Register';
+import Register from '../components/DatosAlumno/DatosAlumno';
 import Cards from '../components/Cards';
 import Becas from '../components/Becas/Becas';
 import logito from '../assets/images/Durazno_Naranja_Europea_Elegante_Curvo_Texto_Logo_(1).png';
@@ -273,7 +273,9 @@ function Home() {
           </div>
           <div className="row d-flex mt-4 justify-content-center ">
             <div className="col-12 col-lg-4 metric d-flex">
+              
               <div className="col-12 col-md-8 box">
+              <hr/>
                 <p className="univ-info">Somos tu mejor opcion</p>
                 <p className="author">
                   Junto con un gran equipo de profesores, staff y gerencia.
@@ -286,6 +288,7 @@ function Home() {
             </div>
             <div className="col-12 col-lg-4 metric d-flex">
               <div className="col-12 col-md-8 box">
+              <hr/>
                 <p className="univ-info">Somos tu mejor opcion</p>
                 <p className="author">
                   Junto con un gran equipo de profesores, staff y gerencia.
@@ -296,8 +299,11 @@ function Home() {
                 <p className="role"></p>
               </div>
             </div>
+            
             <div className="col-12 col-lg-4 metric d-flex">
+              
               <div className="col-12 col-md-8 box">
+              <hr/>
                 <p className="univ-info">Somos tu mejor opcion</p>
                 <p className="author">
                   Junto con un gran equipo de profesores, staff y gerencia.

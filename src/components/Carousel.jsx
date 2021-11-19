@@ -5,11 +5,15 @@ import logo2 from '../assets/images/campus.jpg'
 import logo3 from '../assets/images/universidad-norte-santo-tomas-aquino-unsta-798549-100014.jpg'
 
 import '../styles/Carousel.css'
+import styled from 'styled-components'
+
 
 const Carrusel = () => {
     return (
         <Fragment>
-        <Carousel fade ClassName="container-fluid"  >
+          
+        <Carousel fade ClassName="container-fluid shadow-carrusel z-index-0"  >
+          
   <Carousel.Item className="carousel-item"  >
     <img
       className="d-block w-100 "
@@ -49,6 +53,7 @@ const Carrusel = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+
 </Fragment>
     )
 }

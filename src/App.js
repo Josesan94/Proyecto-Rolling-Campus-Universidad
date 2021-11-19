@@ -17,7 +17,10 @@ import LoginPage from './pages/loginPage';
 import RegisterPage from './pages/RegisterPage';
 
 import ProfilePage from './pages/ProfilePage';
-import CustomizedTables from './components/UserData/UserData';
+import PageAlumno from './pages/PageAlumno';
+import DatosAlumno from './components/DatosAlumno/DatosAlumno';
+
+
 
 function App() {
   return (
@@ -33,7 +36,8 @@ function App() {
           <Route exact path='/login' element={<LoginPage/>} />
           <Route exact path='/register' element={<RegisterPage/>} />
           <Route exact path='/profile' element={<ProfilePage/>}/>
-          <Route exact path='/data' element={<CustomizedTables/>}/>
+          <Route exact path='/tables' element={<PageAlumno/>}/>
+          <Route exact path='/datos' element ={<DatosAlumno/>} />
       </Routes>
       
       

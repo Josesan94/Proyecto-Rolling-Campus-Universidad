@@ -1,5 +1,5 @@
 
-form {
+.contact-form {
   max-width: 800px;
   margin: 0 auto;
   
@@ -33,34 +33,33 @@ input {
 
 button[type="submit"],
 input[type="submit"] {
-  background:#2716bf ;
+  background:#ffb657 ;
   color: white;
   text-transform: uppercase;
   border: none;
-  margin-top: 40px;
+  
   padding: 20px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 100;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
+  
 }
 
 button[type="submit"]:hover,
 input[type="submit"]:hover {
-  background: #5e3800;
+  background: #a5c1fd;
 }
 
 button[type="submit"]:active,
 input[type="button"]:active,
 input[type="submit"]:active {
-  transition: 0.3s all;
-  transform: translateY(3px);
+  transition: 0.7s all;
+  transform: translateY(5px);
   border: 1px solid transparent;
   opacity: 0.8;
 }
 
-input:disabled {
-  opacity: 0.4;
-}
+
 
 input[type="button"]:hover {
   transition: 0.3s all;

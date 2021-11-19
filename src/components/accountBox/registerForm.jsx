@@ -10,7 +10,7 @@ import {
   FormSuccess,
   Input,
   MutedLink,
-  SubmitButton,
+  ButtonSub,
   FormError,
 } from "./common";
 import { AccountContext } from "./accountContext";
@@ -46,10 +46,11 @@ export function SignupForm(props) {
   const [error, setError] = useState(null);
 
   const onSubmit = async (values) => {
+    console.log(values)
     const { confirmPassword, ...data } = values;
 
     const response = await axios
-      .post("http://localhost:5000/api/v1/register", data)
+      .post("http://localhost:3002/api/register", data)
       .catch((err) => {
         if (err && err.response) setError(err.response.data.message);
         setSuccess(null);
@@ -139,16 +140,17 @@ export function SignupForm(props) {
               : ""}
           </FieldError>
         </FieldContainer>
-        <Marginer direction="vertical" margin="1em" />
-        <SubmitButton type="submit" disabled={!formik.isValid}>
-          Signup
-        </SubmitButton>
+        <Marginer direction="vertical" margin={10} />
+        <ButtonSub type="submit" disabled={!formik.isValid}>
+          Registrarse
+        </ButtonSub>
       </FormContainer>
+      
       <Marginer direction="vertical" margin={5} />
       <MutedLink href="#">
-        Already have an account?
+        ¿Ya tenes una cuenta?
         <BoldLink href="#" onClick={switchToSignin}>
-          sign in
+          Ingresá
         </BoldLink>
       </MutedLink>
     </BoxContainer>

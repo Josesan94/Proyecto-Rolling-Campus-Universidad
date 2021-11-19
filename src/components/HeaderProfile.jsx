@@ -18,7 +18,7 @@ function HeaderProfile() {
               alt="React Bootstrap logo"
             />
           </ReactBootStrap.Navbar.Brand>
-          <h3 >Bienvenido Usuario</h3>
+          <h2 >Nombre usuario</h2>
           
         </ReactBootStrap.Container>
       </ReactBootStrap.Navbar>

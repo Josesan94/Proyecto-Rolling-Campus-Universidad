@@ -12,7 +12,7 @@ export const FormContainer = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 0px 2.5px rgba(15, 15, 15, 0.19);
+  box-shadow: 0px 0px 2.5px rgba(15, 15, 15, 0.09);
 `;
 
 export const MutedLink = styled.a`
@@ -32,11 +32,11 @@ export const BoldLink = styled.a`
 
 export const Input = styled.input`
   width: 100%;
-  height: 42px;
+  height: 32px;
   outline: none;
-  border: 1px solid rgba(200, 200, 200, 0.3);
+  border: 1px solid rgba(105, 105, 105, 0.1);
   padding: 0px 10px;
-  border-bottom: 1.4px solid transparent;
+  border-bottom: 1.4px solid rgba(15, 15, 15, 0.01);
   transition: all 200ms ease-in-out;
   font-size: 12px;
 
@@ -54,9 +54,9 @@ export const Input = styled.input`
   }
 `;
 
-export const SubmitButton = styled.button`
+export const ButtonSub = styled.button`
   width: 100%;
-  padding: 11px 40%;
+  padding: 12px 40%;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -64,7 +64,7 @@ export const SubmitButton = styled.button`
   border-radius: 100px 100px 100px 100px;
   cursor: pointer;
   transition: all, 240ms ease-in-out;
-  background: rgb(241, 196, 15);
+  background: rgb(15, 241, 64);
   background: linear-gradient(
     58deg,
     rgba(241, 196, 15, 1) 20%,
