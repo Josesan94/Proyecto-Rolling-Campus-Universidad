@@ -49,12 +49,12 @@ function Header() {
             <ReactBootStrap.Nav>
               <div className="loginbutton">
                 <Link to={'/login'}>
-                  <Button className="buttonClass">Ingresar</Button>
+                  <Button variant="danger">Ingresar</Button>
                 </Link>
               </div>
               <div>
                 <Link to={'/register'}>
-                  <Button className="buttonClass">Crea una cuenta</Button>
+                  <Button variant="warning">Crea una cuenta</Button>
                 </Link>
               </div>
             </ReactBootStrap.Nav>

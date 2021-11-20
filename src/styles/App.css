@@ -4,30 +4,9 @@
 
 .App {
   background-color: hsl(231, 20%, 85%);
-  font-family: 'Noto Sans', sans-serif;
   
 }
 
-.buttonClass {
-  font-size: 15px;
-  font-family: Arial;
-  width: 100px;
-  height: 58px;
-  border-width: 3px;
-  color: #fff;
-  border-top-left-radius: 20px!important;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px !important;
-  box-shadow: inset 0px 0px 15px 3px #23395e;
-  text-shadow: inset 0px 1px 0px #9b3208 !important;
-  background: linear-gradient(#ff5b0f, #804f22) !important;
-  text-decoration: none !important;
-}
-
-.buttonClass:hover {
-  background: linear-gradient(#b85a43, #1a1a19) !important;
-}
 
 /* Parte del Navbar inicio */
 
@@ -40,6 +19,7 @@
 .navbar {
   background-color: #ff9a3e !important;
 }
+
 
 
 /* Parte del Navbar Fin */
@@ -112,3 +92,41 @@
 }
 
 /* Acerca de Nosotros Fin */
+
+
+/* conteiner flexbox inicio */
+
+.flexbox-container > div {
+	width: 50%;
+  background: #fff;
+}
+.flexbox-container {
+	display: flex;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.flexbox-container > div:first-child {
+}
+
+.activas > img {
+  height: 300px;
+  width: 100%;
+}
+
+.activas-letras{
+  align-items: center;
+  text-align: center;
+  background-color: whitesmoke !important;
+}
+
+.activas-letras2 {
+  color: #0f3250;
+  font-weight: 600;
+}
+
+
+.activas-letras h1 {
+  padding-top: 10px;
+}
+
+/* conteiner flexbox fin */

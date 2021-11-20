@@ -23,6 +23,7 @@ import LaptopIcon from '@material-ui/icons/Laptop';
 import { Button as Mbutton } from '@material-ui/core';
 import FormContact from '../components/FormContact';
 import Footer2 from '../components/footer2';
+import Activa from '../components/activa';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,8 +42,8 @@ function Home() {
   const bgStyles = {
     background: '#bdc3c7' /* fallback for old browsers */,
     background:
-      '-webkit-linear-gradient(to right, #2c3e50, #bdc3c7)' /* Chrome 10-25, Safari 5.1-6 */,
-    background: 'linear-gradient(to right, #2c3e50, #bdc3c7)',
+      '-webkit-linear-gradient(to right, #ff9a3e, #bdc3c7)' /* Chrome 10-25, Safari 5.1-6 */,
+    background: 'linear-gradient(to right, rgba(228, 156, 88, 0.925), #bdc3c7)',
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border: '0.1px groove',
     boxShadow: '0 2px 5px 0 rgba(0,0,0,1)',
@@ -52,14 +53,16 @@ function Home() {
     <Header />
     <div className="carrusel-container ">
       <Carrusel />
-      <div className=" p-5">
-        <div className="container " style={{background:"whitesmoke",boxShadow:"4px 6px 3px rgba(0,0,0,0.5)"}}>
-          <Typography align="center" variant="h3">
-            El futuro ha llegado a nuestra universidad
-          </Typography>
-        </div>
+  
+      <div className="container">
+        <Activa/>
+        
       </div>
       <Cards />
+      <div className="container">
+       
+
+      </div>
 
       {/* <Becas /> */}
 
@@ -84,6 +87,7 @@ function Home() {
                 
               "
           style={bgStyles}
+          
         >
           <Typography align="center" variant="h2">
             Noticias academicas
