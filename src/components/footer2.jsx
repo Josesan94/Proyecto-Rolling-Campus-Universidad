@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import '../styles/footer.css'
 import Logo3 from "../assets/images/Logo.png";
 import FormContact from "./FormContact";
+import instagram from "../assets/images/instagram_internet_media_network_social_icon_123258.png"
+import facebook from "../assets/images/facebook_internet_media_network_social_icon_123257.png"
+import youtube from "../assets/images/YOUTUBE_icon-icons.com_65487.png"
+import twit from "../assets/images/twit.png"
 
 const Footer2 = () => {
     
@@ -22,28 +26,38 @@ const Footer2 = () => {
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>Nosotros</h2>
-            <Link to='/sign-up'>Quienes somos</Link>
+            <Link to='/sign-up'>¿Quienes somos?</Link>
             <Link to='/'>Testimonios</Link>
-            <Link to='/'>Carrera</Link>
+            <Link to='/'>Carreras</Link>
             
             
           </div>
-          <div class='footer-link-items'>
-            <h2>Contactanos</h2>
-            <Link to='/'>Contact</Link>
-            <Link to='/'>Sponsors</Link>
-          </div>
+          
         </div>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
-            
-          </div>
-          <div class='footer-link-items'>
-            <h2>Social Media</h2>
+            <h2>Redes Sociales</h2>
+            <div>
             <Link to='/'>Instagram</Link>
+            <img className="iconos" src={instagram} alt="" />
+
+            </div>
+            <div>
             <Link to='/'>Facebook</Link>
+            <img className="iconos" src={facebook} alt="" />
+
+            </div>
+            <div>
             <Link to='/'>Youtube</Link>
+            <img className="iconos" src={youtube} alt="" />
+
+            </div>
+            <div>
             <Link to='/'>Twitter</Link>
+            <img className="iconos" src={twit} alt="" />
+
+            </div>
+
           </div>
         </div>
       </div>
@@ -108,9 +122,12 @@ const Footer2 = () => {
       </section>
     </div>
 
+      
         
         
     )
 }
 
 export default Footer2;
+
+

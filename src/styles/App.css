@@ -47,6 +47,8 @@
 .carrusel-container {
   position: relative;
   z-index: 0;
+  margin-top: 1% !important;
+   box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .enjoy-css {
@@ -72,16 +74,12 @@
 }
 
 .texto2 {
-  margin-left: 100px;
-  margin-right: 200px;
+  margin-left: 8%;
+  margin-right: 8%;
   color: white;
 }
 
-.texto2 {
-  margin-left: 100px;
-  margin-right: 200px;
-  color: white;
-}
+
 
 .titulo {
   text-align: center;
@@ -97,13 +95,16 @@
 }
 
 
-.programacion {
-  height: 50px;
-  width: 50px;
-  margin-left: 10px;
-  margin-bottom: 1%;
-}
 
+.programador {
+  background-image: url(../assets/images/program2.jpg) !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  opacity: 1;
+
+
+}
 
 
 .imagenNosotros {
