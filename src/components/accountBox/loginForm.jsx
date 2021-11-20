@@ -1,5 +1,5 @@
 import { Field, useFormik } from "formik";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import { Marginer } from "../marginer";
 import {
   BoldLink,
@@ -17,6 +17,10 @@ import * as yup from "yup";
 import axios from "axios";
 import Link from "react-router-dom";
 
+
+const URL = 'http://localhost3001/api'
+
+
 const validationSchema = yup.object({
   email: yup.string().required(),
   password: yup.string().required(),
@@ -29,8 +33,13 @@ export function LoginForm(props) {
   const onSubmit = async (values) => {
     console.log(values)
     setError(null);
-    const response = await axios
-      .post("http://localhost:3002/api/login", values)
+      const response = await axios.post(`${URL}/login`, {
+        email:"mariaj@hotmail.com",
+        password:"alfabeta"
+      },{})
+      .then((response) =>{
+        console.log(response)
+      })
       .catch((err) => {
         if (err && err.response) setError(err.response.data.message);
         console.log("error",err)
@@ -38,8 +47,18 @@ export function LoginForm(props) {
 
     if (response) {
       alert("Autenticando usuario...");
+      console.log(response)
     }
+
+   
+
   };
+
+ 
+
+  useEffect(() => {
+    onSubmit()
+  },[])
 
   const formik = useFormik({
     initialValues: { email: "", password: "" },

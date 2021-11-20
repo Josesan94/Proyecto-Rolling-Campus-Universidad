@@ -19,7 +19,7 @@ import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
 import PageAlumno from './pages/PageAlumno';
 import DatosAlumno from './components/DatosAlumno/DatosAlumno';
-
+import Users from './components/users/users';
 
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
           <Route exact path='/profile' element={<ProfilePage/>}/>
           <Route exact path='/tables' element={<PageAlumno/>}/>
           <Route exact path='/datos' element ={<DatosAlumno/>} />
+          <Route exact path='/users' element ={<Users/>} />
       </Routes>
       
       

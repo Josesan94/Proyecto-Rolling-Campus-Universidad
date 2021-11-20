@@ -4,6 +4,7 @@ import data from './data.json'
 import LeerFila from './Leerfila';
 import EditarFila from './EditarFila';
 import { nanoid } from "nanoid";
+import Switch from '@material-ui/core/Switch';
 
 function DatosAlumno() {
     const [contacts, setContacts] = useState(data);
@@ -23,6 +24,8 @@ function DatosAlumno() {
         email:'',
     });
     const [editContactId, setEditContactId] = useState(null );
+
+    
     
    const handleAddData = (e) => {
        e.preventDefault();
@@ -118,15 +121,18 @@ function DatosAlumno() {
     setEditContactId(null);
   };
 
-  const handleDeleteClick = (contactId) => {
-    const newContacts = [...contacts];
+//   const handleDeleteClick = (contactId) => {
+//     const newContacts = [...contacts];
 
-    const index = contacts.findIndex((contact) => contact.id === contactId);
+//     const index = contacts.findIndex((contact) => contact.id === contactId);
 
-    newContacts.splice(index, 1);
+//     newContacts.splice(index, 1);
 
-    setContacts(newContacts);
-  };
+//     setContacts(newContacts);
+//   };
+
+
+
 
    
 
@@ -158,7 +164,7 @@ function DatosAlumno() {
                         (
                             <LeerFila contact ={contact} 
                             handleEditClick={handleEditClick}
-                            handleDeleteClick={handleDeleteClick}
+                            // handleDeleteClick={handleDeleteClick}
                             />
                         )}
                        
