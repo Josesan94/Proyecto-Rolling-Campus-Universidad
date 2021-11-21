@@ -1,12 +1,34 @@
-import { Fragment } from "react"
+import { Fragment, useState, useEffect } from "react"
+// import axios from 'axios';
 import { Carousel } from "react-bootstrap"
 import logo1 from '../assets/images/The-Lawn.jpg'
 import logo2 from '../assets/images/campus.jpg'
 import logo3 from '../assets/images/universidad-norte-santo-tomas-aquino-unsta-798549-100014.jpg'
 
+
 import '../styles/Carousel.css'
 
+// const axiosInstance = axios.create({
+//   baseUrl: "http://localhost:3001",
+//   headers:{
+//     Authorization: `Bearer ${localStorage.getItem('token')}`
+//   }
+// });
+
 const Carrusel = () => {
+
+  // const [ofertas,setOfertas] = useState([]);
+
+  // const getOffers = () =>{
+  
+  //   axiosInstance.get("/ofertas")
+  //   .then(resp=>{
+  //     setOfertas(resp.data)
+  //   })
+  // }
+
+  // useEffect(()=>getOffers(),[]);
+
     return (
         <Fragment>
         <Carousel fade ClassName="container-fluid"  >

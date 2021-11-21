@@ -1,10 +1,18 @@
 import React, {useState}  from 'react';
+import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import '../styles/loginPage.css'
 import { Link } from 'react-router-dom';
 
+const axiosInstance = axios.create({
+	baseURL: 'http://localhost:3001/api'
+})
+
+let axiosAuthorized;
+
 const Login = () => {
 	
+
 
 	const [formularioEnviado, setFormularioEnviado] = useState(false);
 
@@ -38,7 +46,38 @@ const Login = () => {
 				resetForm()
 				console.log('Formulario enviado')
 				setFormularioEnviado(true)
-				setTimeout(() => setFormularioEnviado(false), 5000)
+
+				axiosInstance.post('/login',{
+					email:valores.correo,
+					password: valores.nombre
+				})
+				.then(resp=>{
+					console.log(resp);
+
+					localStorage.setItem('token',resp.data.token);
+
+					axiosAuthorized = axios.create({
+						baseURL:'http://localhost:3001/api',
+						headers:{
+							Authorization: `Bearer ${resp.data.token}`
+						}
+					});
+
+					axiosAuthorized.get('/users').then(console.log);
+					axiosInstance.get('/users').then(console.log)
+				})
+			
+				// axiosInstance
+        //   .post("/add-user", {
+        //     name: "Usuario prueba",
+        //     email: "email@email.com",
+        //     password: "password",
+        //     surname: "apelldo",
+        //     role: "TEACHER_ROLE",
+				// 		id:'123456789'
+        //   })
+        //   .then(console.log)
+        //   .catch(console.log);
 				
 			}}
 		>
@@ -76,9 +115,9 @@ const Login = () => {
                           <div className="error">{errors.correo}</div>
 					)}/>
 				</div>
-                <Link to={'/profile'}> 
+                
 				<button type="submit">Enviar</button>
-				</Link>
+				
 				{(formularioEnviado) ? <p className="exito">usuario logeado!</p> : ""}
 			</Form>
 			)}
