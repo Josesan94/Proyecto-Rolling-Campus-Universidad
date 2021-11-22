@@ -18,7 +18,11 @@ import axios from "axios";
 import Link from "react-router-dom";
 
 
-const URL = 'http://localhost3001/api'
+const axiosInstance = axios.create({
+	baseURL: 'http://localhost:3001/api'
+})
+
+let axiosAuthorized;
 
 
 const validationSchema = yup.object({
@@ -33,26 +37,27 @@ export function LoginForm(props) {
   const onSubmit = async (values) => {
     console.log(values)
     setError(null);
-      const response = await axios.post(`${URL}/login`, {
-        email:"mariaj@hotmail.com",
-        password:"alfabeta"
-      },{})
-      .then((response) =>{
-        console.log(response)
-      })
-      .catch((err) => {
-        if (err && err.response) setError(err.response.data.message);
-        console.log("error",err)
+
+    axiosInstance.post('/login',values
+    )
+    .then(resp=>{
+      console.log(resp);
+
+      localStorage.setItem('token',resp.data.token);
+
+      axiosAuthorized = axios.create({
+        baseURL:'http://localhost:3001/api',
+        headers:{
+          Authorization: `Bearer ${resp.data.token}`
+        }
       });
 
-    if (response) {
-      alert("Autenticando usuario...");
-      console.log(response)
-    }
+   axiosAuthorized.get('/users').then(console.log);
+					axiosInstance.get('/users').then(console.log)
+				})
+}
 
-   
-
-  };
+  
 
  
 

@@ -1,5 +1,5 @@
 import { Field, useFormik } from "formik";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Marginer } from "../marginer";
 import {
   BoldLink,
@@ -16,11 +16,21 @@ import {
 import { AccountContext } from "./accountContext";
 import * as yup from "yup";
 import axios from "axios";
+import { getRoles } from "@testing-library/react";
+
+const axiosInstance = axios.create({
+  baseURL: "http://localhost:3001/api",
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
+  },
+});
+
+
 
 const PASSWORD_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 const validationSchema = yup.object({
-  fullName: yup
+  name: yup
     .string()
     .min(3, "Please enter you real name")
     .required("Full name is required!"),
@@ -46,29 +56,44 @@ export function SignupForm(props) {
   const [error, setError] = useState(null);
 
   const onSubmit = async (values) => {
-    console.log(values)
-    const { confirmPassword, ...data } = values;
+    console.log(values);
+    // const { confirmPassword, ...data } = values;
 
-    const response = await axios
-      .post("http://localhost:3002/api/register", data)
-      .catch((err) => {
-        if (err && err.response) setError(err.response.data.message);
-        setSuccess(null);
-      });
+    axiosInstance.post("/add-user", values).then((response) => {
+      console.log('respuesta del servidor', response);
 
-    if (response && response.data) {
-      setError(null);
-      setSuccess(response.data.message);
-      formik.resetForm();
-    }
+     
+
+      
+
+      
+
+      if (response && response.data) {
+        console.log("formulario exitoso")
+        setError(null);
+        setSuccess(response.data.message);
+        formik.resetForm();
+      }
+    })
+    
+    
   };
+
+  useEffect(() => {
+   // getRoles() crear funcion para llamar a los roles
+    
+  },[])
+
 
   const formik = useFormik({
     initialValues: {
-      fullName: "",
+      name: "",
       email: "",
+      dir:"",
+      id:"",
       password: "",
       confirmPassword: "",
+      role:""
     },
     validateOnBlur: true,
     onSubmit,
@@ -84,15 +109,15 @@ export function SignupForm(props) {
       <FormContainer onSubmit={formik.handleSubmit}>
         <FieldContainer>
           <Input
-            name="fullName"
-            placeholder="Full Name"
-            value={formik.values.fullName}
+            name="name"
+            placeholder="Nombre completo"
+            value={formik.values.name}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
           <FieldError>
-            {formik.touched.fullName && formik.errors.fullName
-              ? formik.errors.fullName
+            {formik.touched.name && formik.errors.name
+              ? formik.errors.name
               : ""}
           </FieldError>
         </FieldContainer>
@@ -107,6 +132,34 @@ export function SignupForm(props) {
           <FieldError>
             {formik.touched.email && formik.errors.email
               ? formik.errors.email
+              : ""}
+          </FieldError>
+        </FieldContainer>
+        <FieldContainer>
+          <Input
+            name="dir"
+            placeholder="Domicilio"
+            value={formik.values.dir}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          <FieldError>
+            {formik.touched.dir && formik.errors.dir
+              ? formik.errors.dir
+              : ""}
+          </FieldError>
+        </FieldContainer>
+        <FieldContainer>
+          <Input
+            name="id"
+            placeholder="DNI"
+            value={formik.values.id}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          <FieldError>
+            {formik.touched.id && formik.errors.id
+              ? formik.errors.id
               : ""}
           </FieldError>
         </FieldContainer>
@@ -140,12 +193,35 @@ export function SignupForm(props) {
               : ""}
           </FieldError>
         </FieldContainer>
+        
+          
+        <FieldContainer>
+          <Input
+            name="role"
+            type="select"
+            placeholder="rol"
+            value={formik.values.role.TEACHER_ROLE}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          <FieldError>
+            {formik.touched.role && formik.errors.role
+              ? formik.errors.role
+              : ""}
+          </FieldError>
+        </FieldContainer>
+        {/* <FieldContainer>
+          <Field type="radio" name="role" value ={formik.values.role.STUDENT_ROLE}/>
+        </FieldContainer>
+        <FieldContainer>
+          <Field type="radio" name="role" value ={formik.values.role.TEACHER_ROLE}/>
+        </FieldContainer> */}
         <Marginer direction="vertical" margin={10} />
         <ButtonSub type="submit" disabled={!formik.isValid}>
           Registrarse
         </ButtonSub>
       </FormContainer>
-      
+
       <Marginer direction="vertical" margin={5} />
       <MutedLink href="#">
         ¿Ya tenes una cuenta?
@@ -153,6 +229,7 @@ export function SignupForm(props) {
           Ingresá
         </BoldLink>
       </MutedLink>
+      {}
     </BoxContainer>
   );
 }

@@ -5,6 +5,7 @@ import Footer2 from "../components/footer2";
 import Header from "../components/Header";
 import styled from "styled-components";
 import {AccountBox} from '../components/accountBox'
+import useAuth from  '../components/auth/useAuth'
 
 const AppContainer = styled.div `
     width:100%;
@@ -16,6 +17,8 @@ const AppContainer = styled.div `
     `
 
 const LoginPage = () => {
+
+    const auth = useAuth()     
     
 
 
@@ -23,6 +26,7 @@ const LoginPage = () => {
  return (
      <div>
          <Header />
+         {auth.user ? <button onClick={auth.logout}>Logout</button> : <button onClick={auth.login}>login</button>}
     <AppContainer>
     <AccountBox/>
     </AppContainer>

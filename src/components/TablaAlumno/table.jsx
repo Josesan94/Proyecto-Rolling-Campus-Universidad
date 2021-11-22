@@ -53,6 +53,12 @@ const Button = tw.button`
   transition-colors
 `;
 
+const axiosInstance = axios.create({
+	baseURL: 'http://localhost:3001/api'
+})
+
+let axiosAuthorized;
+
 
 const MateriasTable = (props) => {
 
@@ -60,7 +66,10 @@ const MateriasTable = (props) => {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
-    const response = await axios.get('https://fakestoreapi.com/products')
+
+    
+    
+    const response = await axios.get('http://localhost:3001/api/users')
     .catch(err => console.log("error",err))
 
     if(response ) {
@@ -123,23 +132,7 @@ const isEven = (idx) => idx%2 === 0;
     []
   );
 
-  const columns = useMemo(
-    () => [
-      {
-        Header: "Id",
-        accessor: "id",
-      },
-      {
-        Header: "Price",
-        accessor: "price",
-      },
-      {
-        Header: "Title",
-        accessor: "title",
-      },
-    ],
-    []
-  );
+  
 
   const productsData = useMemo (()  => [...products], [products])
 

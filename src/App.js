@@ -1,56 +1,49 @@
-
-import './styles/App.css';
-import './components/Header';
-import Header from './components/Header';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./styles/App.css";
+import "./components/Header";
+import Header from "./components/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
 //import Footer from './components/Footer';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  
-} from "react-router-dom";
-import Home from './pages/Home';
-import BecasPage from './pages/BecasPage';
-import Nosotros from './pages/Nosotros';
-import LoginPage from './pages/loginPage';
-import RegisterPage from './pages/RegisterPage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./routes/PrivateRoute";
+import Private from "./routes/private";
+import Home from "./pages/Home";
+import BecasPage from "./pages/BecasPage";
+import Nosotros from "./pages/Nosotros";
+import LoginPage from "./pages/loginPage";
+import RegisterPage from "./pages/RegisterPage";
 
-import ProfilePage from './pages/ProfilePage';
-import PageAlumno from './pages/PageAlumno';
-import DatosAlumno from './components/DatosAlumno/DatosAlumno';
-import Users from './components/users/users';
-
+import ProfilePage from "./pages/ProfilePage";
+import PageAlumno from "./pages/PageAlumno";
+import DatosAlumno from "./components/DatosAlumno/DatosAlumno";
+import Users from "./components/users/users";
+import NotFound from "./pages/NotFound";
+import AuthProvider from "./components/auth/AuthProvider";
 
 function App() {
   return (
-    <Router>
-      <body>
-      <div className =" App">
-      
-      
-      <Routes>
-          <Route exact path='/'  element={<Home/>} />
-          <Route exact path='/becas'  element={<BecasPage/>} />
-          <Route exact path='/nosotros' element={<Nosotros/>} />
-          <Route exact path='/login' element={<LoginPage/>} />
-          <Route exact path='/register' element={<RegisterPage/>} />
-          <Route exact path='/profile' element={<ProfilePage/>}/>
-          <Route exact path='/tables' element={<PageAlumno/>}/>
-          <Route exact path='/datos' element ={<DatosAlumno/>} />
-          <Route exact path='/users' element ={<Users/>} />
-      </Routes>
-      
-      
-      
-      
-      
-        
-        
-      
-      </div>
-      </body>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <body>
+          <div className=" App">
+            <Routes>
+              <Route path="/" element={<PrivateRoute />}></Route>
+              {/* creacion de rutas privadas */}
+
+              {/* <Route exact path='/'  element={<Home/>} /> */}
+              <Route exact path="/becas" element={<BecasPage />} />
+              <Route exact path="/nosotros" element={<Nosotros />} />
+              <Route exact path="/login" element={<LoginPage />} />
+              <Route exact path="/register" element={<RegisterPage />} />
+              <Route exact path="/profile" element={<ProfilePage />} />
+              <Route exact path="/tables" element={<PageAlumno />} />
+              <Route exact path="/datos" element={<DatosAlumno />} />
+              <Route exact path="/users" element={<Users />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </body>
+      </Router>
+    </AuthProvider>
   );
 }
 
@@ -71,11 +64,8 @@ export default App;
 
 // app.use(express.urlencoded({extended: true}));
 
-
-
-
 // app.use('/api', [
-//     user_routes, 
+//     user_routes,
 //     transaction_routes,
 //     upload_routes
 // ])
