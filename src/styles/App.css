@@ -81,7 +81,10 @@
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
-  opacity: 1;
+  filter: opacity(1) !important;
+  filter: blur(10%) !important;
+  
+
 
 
 }
@@ -104,6 +107,7 @@
 	display: flex;
   margin-bottom: 5%;
   margin-top: 5%;
+  
 }
 .flexbox-container > div:first-child {
 }
@@ -116,11 +120,12 @@
 .activas-letras{
   align-items: center;
   text-align: center;
-  background-color: whitesmoke !important;
+  background-color: rgba(0, 0, 0, 0.596) !important;
+  box-shadow: 1px 1px 1px;
 }
 
 .activas-letras2 {
-  color: #0f3250;
+  color: white;
   font-weight: 600;
 }
 

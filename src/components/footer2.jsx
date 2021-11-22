@@ -63,18 +63,6 @@ const Footer2 = () => {
       </div>
       <section class='social-media'>
         <div class='social-media-wrap'>
-          <div class='footer-logo'>
-            <Link to='/' className='social-logo'>
-            <img
-                    alt="Logo universidad"
-                    src={Logo3}
-                    width="100"
-                    height="70"
-                    // className="d-inline-block align-top"
-                  />
-              <i class='fab fa-typo3' />
-            </Link>
-          </div>
           <small class='website-rights'>Universidad San Jose del Corazón de Roma © 2021</small>
           <div class='social-icons'>
             <Link
