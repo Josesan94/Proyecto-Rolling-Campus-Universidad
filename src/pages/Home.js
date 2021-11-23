@@ -31,8 +31,8 @@ import { ButtonSub } from '../components/accountBox/common';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
-    padding: '5rem',
+    flexGrow: 2,
+    padding: '3rem'
   },
   paper: {
     padding: theme.spacing(2),
@@ -209,21 +209,7 @@ function Home() {
         </section>
       </div>
 
-      <div className="container-fluid logo-container ">
-        <div className={classes.root}>
-          <Grid container spacing={6}>
-            <Grid item xs>
-              <img src={logito} alt="imagen de logo" className="img-grid" />
-            </Grid>
-            <Grid item xs>
-              <img src={logito2} alt="imagen de logo" className="img-grid" />
-            </Grid>
-            <Grid item xs>
-              <img src={logito3} alt="imagen de logo" className="img-grid" />
-            </Grid>
-          </Grid>
-        </div>
-      </div>
+      
 
       <div className="metric-block container-fluid theme-dark">
         <div className="container">
@@ -317,11 +303,26 @@ function Home() {
           </div>
 
           <div className="row d-flex justify-content-center my-4">
-            <ButtonSub type="submit" className="button-more">
+            <ButtonSub  className="button-more">
               <p>Mas sobre nosotros</p>
             </ButtonSub>
           </div>
           <div className="row d-flex justify-content-center m-1"></div>
+        </div>
+      </div>
+      <div className="container-fluid logo-container mt-2 ">
+        <div className={classes.root}>
+          <Grid container spacing={6}>
+            <Grid item xs>
+              <img src={logito} alt="imagen de logo" className="img-grid" />
+            </Grid>
+            <Grid item xs>
+              <img src={logito2} alt="imagen de logo" className="img-grid" />
+            </Grid>
+            <Grid item xs>
+              <img src={logito3} alt="imagen de logo" className="img-grid" />
+            </Grid>
+          </Grid>
         </div>
       </div>
       <Footer2 />
