@@ -67,8 +67,8 @@ export const ButtonSub = styled.button`
   background: rgb(15, 241, 64);
   background: linear-gradient(
     58deg,
-    rgba(241, 196, 15, 1) 20%,
-    rgba(243, 172, 18, 1) 100%
+    #bdcbf1 20%,
+    #faba5b 100%
   );
 
   &:hover {

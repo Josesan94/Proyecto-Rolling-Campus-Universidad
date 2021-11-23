@@ -1,13 +1,13 @@
 import React from 'react'
 import promo from '../../assets/images/Program.jpg'
 
+
 function Carreras() {
     return (
-        <div>
+        <div className="programador"> 
             <div className="programacion">
-                <img src={promo}/>
-            </div>
-            <h1 className="titulo3">Presentación</h1>
+                {/* <img src={promo}/> */}
+                <h1 className="titulo3">Presentación </h1>
             <p className="texto2">La Argentina muestra una actividad econconómica robusta en el área de desarrollo de software, originada en y retroalimentándose con una cultura informática temprana y ampliamente extendida, al menos en los principales centros urbanos.</p>
             <p className="texto2">El aumento sostenido que se espera en la demanda global de servicios asociados a las tecnologías de la información y las comunicaciones (TICs) augura para el área un amplio
 potencial de crecimiento.</p>
@@ -20,8 +20,16 @@ potencial de crecimiento.</p>
             <p className="texto2">- tener elementos que le faciliten el trabajo en grupo, tanto en lo actitudinal (compartir conocimientos, privilegiar colaboración a competencia, organizar tareas) como en lo técnico (conocer herramientas y entornos).</p>
             <p className="texto2">- incorporar a su práctica nuevas herramientas que vayan apareciendo en el ámbito profesional.</p>
             <p className="texto2">- comprender que las actividades de programación se inscriben muchas veces en un marco más amplio de proyectos de desarrollo de software, y cuáles son sus roles específicos dentro de un equipo de proyecto.</p>
-        </div>
+            <h2 className="titulo3"> ¿Necesito Tener Conocimientos Previos en Informatica? </h2>
+            <p className="texto2">Nuestra Universidad se caracteriza por el Prestigio y la excelencia en su Enseñanza, por lo cual no es necesario una Base en Informatica ya que con la Carrera de "Programador Universitario" vas a adquirir todos los conocimientos necesarios no solo para Utilizar la Pc, sino También las herramientas para ser un Programador Full-Stack</p>
+
+            </div>
+
+
+
+        </div> 
+
     )
 }
 
-export default Carreras
+export default Carreras;

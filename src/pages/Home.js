@@ -23,6 +23,11 @@ import LaptopIcon from '@material-ui/icons/Laptop';
 import { Button as Mbutton } from '@material-ui/core';
 import FormContact from '../components/FormContact';
 import Footer2 from '../components/footer2';
+import Activa from '../components/Activa';
+import { ButtonSub } from '../components/accountBox/common';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,26 +47,23 @@ function Home() {
     background: '#bdc3c7' /* fallback for old browsers */,
     background:
       '-webkit-linear-gradient(to right, #2c3e50, #bdc3c7)' /* Chrome 10-25, Safari 5.1-6 */,
-    background: 'linear-gradient(to right, #2c3e50, #bdc3c7)',
+    background: 'white',
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border: '0.1px groove',
     boxShadow: '0 2px 5px 0 rgba(0,0,0,1)',
   };
   return (
     <>
-    <Header />
+    
     <div className="carrusel-container ">
       <Carrusel />
-      <div className=" p-5">
-        <div className="container " style={{background:"whitesmoke",boxShadow:"4px 6px 3px rgba(0,0,0,0.5)"}}>
-          <Typography align="center" variant="h3">
-            El futuro ha llegado a nuestra universidad
-          </Typography>
-        </div>
+      <div className="container">
+          <Activa/> 
       </div>
       <Cards />
 
       {/* <Becas /> */}
+      <div className="container"></div>
 
       <div
         class="
@@ -85,7 +87,7 @@ function Home() {
               "
           style={bgStyles}
         >
-          <Typography align="center" variant="h2">
+          <Typography align="center" variant="h3">
             Noticias academicas
           </Typography>
           <hr />
@@ -94,11 +96,10 @@ function Home() {
               style={{
                 width: '24rem',
                 margin: '1rem',
-                background: 'rgba(183, 192, 240, 0.952)',
                 border: 'none',
                 boxShadow: '0 2px 5px 0 rgba(0,0,0, 1)',
+                background:"rgba(53,53,53,0.8)"
               }}
-              bg="dark"
               text="light"
             >
               <Card.Img
@@ -120,7 +121,7 @@ function Home() {
                     Conoce la experiencia de los primeros egresados
                   </Typography>
                 </Card.Text>
-                <Button variant="secondary">Ver noticia</Button>
+                <Button type="submit">Ver noticia</Button>
               </Card.Body>
             </Card>
             <Card
@@ -129,16 +130,17 @@ function Home() {
                 margin: '1rem',
                 border: 'none',
                 boxShadow: '0 2px 5px 0 rgba(0,0,0, 1)',
+                background:"rgba(53,53,53,0.8)"
               }}
-              bg="dark"
               text="light"
+              
             >
               <Card.Img src={news4} width="100%" className="news-image" />
               <Card.Body>
                 <Card.Title>
                   <Typography align="center" variant="h4" component="h4">
                     {' '}
-                    ¡ 1er puesto !
+                    Premiados
                   </Typography>
                 </Card.Title>
                 <Card.Text>
@@ -148,19 +150,18 @@ function Home() {
                     educativa y tecnologica
                   </Typography>
                 </Card.Text>
-                <Button variant="secondary">Ver noticia</Button>
+                <Button type="submit">Ver noticia</Button>
               </Card.Body>
             </Card>
             <Card
-              style={{
-                width: '24rem',
-                margin: '1rem',
-                background: 'rgba(183, 192, 240, 0.952)',
-                border: 'none',
-                boxShadow: '0 2px 5px 0 rgba(0,0,0, 1)',
-              }}
-              bg="dark"
-              text="light"
+             style={{
+              width: '24rem',
+              margin: '1rem',
+              border: 'none',
+              boxShadow: '0 2px 5px 0 rgba(0,0,0, 1)',
+              background:"rgba(53,53,53,0.8)"
+            }}
+            text="light"
             >
               <Card.Img src={news2} width="100%" className="news-image" />
               <Card.Body>
@@ -170,23 +171,22 @@ function Home() {
                   </Typography>
                 </Card.Title>
                 <Card.Text>
-                  <Typography align="left" variant="h6" component="h4">
+                  <Typography align="center" variant="h6" component="h4">
                     {' '}
                     Registrate aqui para recibir toda la informacion del curso
                   </Typography>
                 </Card.Text>
-                <Button variant="secondary">Ver noticia</Button>
+                <Button type="submit">Ver noticia</Button>
               </Card.Body>
             </Card>
             <Card
               style={{
                 width: '24rem',
                 margin: '1rem',
-                background: 'rgba(183, 192, 240, 0.952)',
                 border: 'none',
                 boxShadow: '0 2px 5px 0 rgba(0,0,0, 1)',
+                background:"rgba(53,53,53,0.8)"
               }}
-              bg="dark"
               text="light"
             >
               <Card.Img src={news3} width="100%" className="news-image" />
@@ -199,10 +199,10 @@ function Home() {
                 <Card.Text>
                   <Typography align="left" variant="h6" display="block">
                     {' '}
-                    Acercate a seccion alumno para que se te asigne una
+                    Acercate a seccion alumno para que se te asigne la tuya
                   </Typography>
                 </Card.Text>
-                <Button variant="secondary">Ver noticia</Button>
+                <Button type="submit">Ver noticia</Button>
               </Card.Body>
             </Card>
           </div>
@@ -317,9 +317,9 @@ function Home() {
           </div>
 
           <div className="row d-flex justify-content-center my-4">
-            <Mbutton variant="outlined" className="button-more">
+            <ButtonSub type="submit" className="button-more">
               <p>Mas sobre nosotros</p>
-            </Mbutton>
+            </ButtonSub>
           </div>
           <div className="row d-flex justify-content-center m-1"></div>
         </div>

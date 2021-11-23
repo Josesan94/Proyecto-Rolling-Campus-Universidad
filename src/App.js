@@ -18,20 +18,23 @@ import DatosAlumno from "./components/DatosAlumno/DatosAlumno";
 import Users from "./components/users/users";
 import NotFound from "./pages/NotFound";
 import AuthProvider from "./components/auth/AuthProvider";
+import Carreras from "./pages/Carreras/Carreras";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
+        <Header/>
         <body>
           <div className=" App">
             <Routes>
-              <Route path="/" element={<PrivateRoute />}></Route>
+              {/* <Route path="/" element={<PrivateRoute />}></Route> */}
               {/* creacion de rutas privadas */}
 
-              {/* <Route exact path='/'  element={<Home/>} /> */}
+              <Route exact path='/'  element={<Home/>} />
               <Route exact path="/becas" element={<BecasPage />} />
               <Route exact path="/nosotros" element={<Nosotros />} />
+              <Route exact path="/Carreras" element={<Carreras />} />
               <Route exact path="/login" element={<LoginPage />} />
               <Route exact path="/register" element={<RegisterPage />} />
               <Route exact path="/profile" element={<ProfilePage />} />

@@ -59,6 +59,8 @@
 
 .footer-link-wrapper {
   display: flex;
+ 
+  
 }
 
 .footer-link-items {
@@ -69,7 +71,14 @@
   text-align: left;
   width: 160px;
   box-sizing: border-box;
+  border-top: 2px solid #ff9a3e;
+ 
 }
+
+.iconos {
+  margin-left: 20px;
+}
+
 
 .footer-link-items h2 {
   margin-bottom: 16px;
@@ -140,6 +149,7 @@
 .website-rights {
   color: #fff;
   margin-bottom: 16px;
+  
 }
 
 @media screen and (max-width: 820px) {

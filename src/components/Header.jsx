@@ -3,6 +3,7 @@ import * as ReactBootStrap from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import Logo3 from '../assets/images/Logo.png';
+import { ButtonSub } from './accountBox/common';
 
 function Header() {
   return (
@@ -41,20 +42,23 @@ function Header() {
                 title="Carrera Promocional"
                 id="collasible-nav-dropdown"
               >
-                <ReactBootStrap.NavDropdown.Item as={Link} to={'/Carreras'}>
+                <ReactBootStrap.NavDropdown.Item as={Link} to={'/Carreras'} 
+     >
                   Programación Universitaria
                 </ReactBootStrap.NavDropdown.Item>
               </ReactBootStrap.NavDropdown>
             </ReactBootStrap.Nav>
             <ReactBootStrap.Nav>
-              <div className="loginbutton">
-                <Link to={'/login'}>
-                  <Button className="buttonClass">Ingresar</Button>
+              <div >
+                <Link to={'/login'} style={{textDecoration:"none",outline:"none"}}>
+                  <ButtonSub type="submit" >Ingresar</ButtonSub>
                 </Link>
+               
+                
               </div>
-              <div>
-                <Link to={'/register'}>
-                  <Button className="buttonClass">Crea una cuenta</Button>
+              <div> 
+                <Link to={'/register'} style={{textDecoration:"none",outline:"none"}}>
+                  <ButtonSub type="submit" >Registrarse</ButtonSub>
                 </Link>
               </div>
             </ReactBootStrap.Nav>
