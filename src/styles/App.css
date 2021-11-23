@@ -152,3 +152,9 @@
 }
 
 /* conteiner flexbox fin */
+
+@media (max-width:560px) {
+  .cardss-creators {
+      grid-template-columns: 100%;
+  }
+}

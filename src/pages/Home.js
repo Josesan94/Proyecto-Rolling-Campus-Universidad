@@ -25,7 +25,11 @@ import FormContact from '../components/FormContact';
 import Footer2 from '../components/footer2';
 import Activa from '../components/Activa';
 import { ButtonSub } from '../components/accountBox/common';
-
+import styled from "styled-components";
+import background from '../assets/images/founding.jpg';
+import GlassCard from '../components/NoticiasCards/glasscard';
+import ColumnFilter from '../components/TablaAlumno/columnFilter';
+import { boxSizing } from '@mui/system';
 
 
 
@@ -65,7 +69,7 @@ function Home() {
       {/* <Becas /> */}
       <div className="container"></div>
 
-      <div
+      {/* <div
         class="
               col-sm-12
               d-flex
@@ -207,6 +211,26 @@ function Home() {
             </Card>
           </div>
         </section>
+      </div> */}
+     <div className=" cardss-creators"  
+     style={{
+      width: '100%',
+      height: '100vh',
+      backgroundImage: `url(${background})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow:'10px 10px 10px rgba(53,53,53,0.5)',
+      zIndex:-1
+      }}>
+        <div><h1>hola</h1></div>
+       < GlassCard />
+       
+       < GlassCard />
+       
       </div>
 
       
