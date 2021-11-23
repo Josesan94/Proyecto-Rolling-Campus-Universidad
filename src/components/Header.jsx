@@ -62,7 +62,7 @@ function Header() {
               </div>
               <div>
                 <Link
-                  to="/register"
+                  to="/login"
                   style={{ textDecoration: 'none', outline: 'none' }}
                 >
                   <ButtonSub type="submit">Registrarse</ButtonSub>

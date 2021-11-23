@@ -15,7 +15,7 @@ function BecasPage() {
             <br></br>
 
             *<div class="container-fluid ">
-                <img className="imagenNosotros" src={imagen} /> 
+                <img class="rounded mx-auto d-block" src={imagen} /> 
                 
             </div>
 

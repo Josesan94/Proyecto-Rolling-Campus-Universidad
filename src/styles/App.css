@@ -66,16 +66,12 @@
   margin-right: 200px;
 }
 
-.texto2 {
-  margin-left: 100px;
-  margin-right: 200px;
-  color: white;
-}
+
 
 .texto2 {
   margin-left: 100px;
   margin-right: 200px;
-  color: white;
+  color: black;
 }
 
 .titulo {
@@ -84,7 +80,7 @@
 
 .titulo3 {
   text-align: center;
-  color: whitesmoke;
+  color: hsl(231, 20%, 85%);
 }
 
 .titulo2 {
@@ -140,9 +136,7 @@
   color:white
 }
 
-.row > p {
-  color:white
-}
+
 
 /* conteiner flexbox fin */
 

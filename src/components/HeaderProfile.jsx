@@ -29,7 +29,7 @@ function HeaderProfile() {
               />
             </ReactBootStrap.Navbar.Brand>
           </ReactBootStrap.Nav.Link>
-          <h2>{user.email}</h2>
+          <h2>Mi perfil</h2>
           <ReactBootStrap.Nav>
             <div>
               <ButtonSub type="submit" onClick={logout}>

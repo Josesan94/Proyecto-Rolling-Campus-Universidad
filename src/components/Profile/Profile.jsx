@@ -6,7 +6,7 @@ import {BoxContainer} from '../accountBox/common'
 import styled from 'styled-components';
 import {motion, transform} from 'framer-motion'
 import {Link} from 'react-router-dom'
-
+import useAuth from '../../components/auth/useAuth';
 
 
 const BackDropp = styled(motion.div)`
@@ -68,7 +68,7 @@ const BackDropp = styled(motion.div)`
 
 
 function Profile() {
-    
+  const { user} = useAuth();
 
   return (
     <>
@@ -133,7 +133,7 @@ function Profile() {
                 initial={{x:"200vw"}}
                 animate={{x:"0",transition:{duration:1,ease:'easeInOut'}}}
 
-                >Bievenido Usuario
+                >Bienvenido/a {user.name}
                 </motion.h3>
                 </div>
               <div
@@ -143,7 +143,7 @@ function Profile() {
                 initial={{x:"-200vw"}}
                 animate={{x:"0",transition:{duration:1,ease:'easeInOut'}}}
 
-                >Avatar
+                >
                 </motion.h1>
               </div>
               
