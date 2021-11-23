@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import BecasPage from "./pages/BecasPage";
 import Nosotros from "./pages/Nosotros";
 import LoginPage from "./pages/loginPage";
-import RegisterPage from "./pages/RegisterPage";
+import RegisterPage from "./pages/registerPage";
 
 import ProfilePage from "./pages/ProfilePage";
 import PageAlumno from "./pages/PageAlumno";
