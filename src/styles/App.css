@@ -114,18 +114,18 @@
 
 
 /* conteiner flexbox inicio */
+
+.flexbox-container > div {
+	width: 100%;
+  
+  box-shadow: 5px 5px 5px rgba(53,53,53,0.5);
+}
 .flexbox-container {
 	display: flex;
   margin-bottom: 5%;
   margin-top: 5%;
-
-}
-
-
-.flexbox-container > div {
-	width: 100%;
   height: 100%;
-  
+
 }
 
 
