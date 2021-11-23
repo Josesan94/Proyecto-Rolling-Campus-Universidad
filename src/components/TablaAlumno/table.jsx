@@ -53,11 +53,7 @@ const Button = tw.button`
   transition-colors
 `;
 
-const axiosInstance = axios.create({
-	baseURL: 'http://localhost:3001/api'
-})
 
-let axiosAuthorized;
 
 
 const MateriasTable = (props) => {
@@ -69,7 +65,7 @@ const MateriasTable = (props) => {
 
     
     
-    const response = await axios.get('http://localhost:3001/api/users')
+    const response = await axios.get('https://fakestoreapi.com/products')
     .catch(err => console.log("error",err))
 
     if(response ) {
@@ -87,51 +83,7 @@ const MateriasTable = (props) => {
 const isEven = (idx) => idx%2 === 0;
 
 
-  const data = useMemo(
-    () => [
-      {
-        id: 1,
-        title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-        price: 109.95,
-        description:
-          "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-        category: "men's clothing",
-        image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-        rating: {
-          rate: 3.9,
-          count: 120,
-        },
-      },
-      {
-        id: 1,
-        title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-        price: 109.95,
-        description:
-          "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-        category: "men's clothing",
-        image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-        rating: {
-          rate: 3.9,
-          count: 120,
-        },
-      },
-      {
-        id: 1,
-        title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-        price: 109.95,
-        description:
-          "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-        category: "men's clothing",
-        image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-        rating: {
-          rate: 3.9,
-          count: 120,
-        },
-      },
-    ],
-    []
-  );
-
+  
   
 
   const productsData = useMemo (()  => [...products], [products])

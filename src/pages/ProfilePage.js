@@ -20,7 +20,7 @@ const AppContainer = styled.div `
 function ProfilePage() {
     return (
         <div>
-         <HeaderProfile />
+         <HeaderProfile/>   
     <AppContainer>
     <Profile/>
     </AppContainer>

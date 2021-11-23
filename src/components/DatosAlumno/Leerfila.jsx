@@ -20,14 +20,15 @@ function LeerFila({ contact, handleEditClick, handleDeleteClick }) {
 
   return (
     <tr>
-      <td>{contact.dni}</td>
-      <td>{contact.fullName}</td>
-      <td>{contact.address}</td>
-      <td>{contact.phoneNumber}</td>
-      <td>{contact.email}</td>
-      <td>
+      <td data-label="Dni">{contact.dni}</td>
+      <td data-label="Nombre">{contact.fullName}</td>
+      <td data-label="Direccion">{contact.address}</td>
+      <td data-label="Celular">{contact.phoneNumber}</td>
+      <td data-label="Email">{contact.email}</td>
+      <td data-label="Año cursado">Primer año</td>
+      <td data-label="Acciones">
         <button type="button" onClick={(e) => handleEditClick(e, contact)}>
-          Edit
+          Editar
         </button>
         {/* <button type="button" onClick={() => handleDeleteClick(contact.id)}>
           Delete

@@ -11,7 +11,7 @@ import BecasPage from "./pages/BecasPage";
 import Nosotros from "./pages/Nosotros";
 import LoginPage from "./pages/loginPage";
 import RegisterPage from "./pages/RegisterPage";
-
+import Footer2 from "./components/footer2";
 import ProfilePage from "./pages/ProfilePage";
 import PageAlumno from "./pages/PageAlumno";
 import DatosAlumno from "./components/DatosAlumno/DatosAlumno";
@@ -19,16 +19,17 @@ import Users from "./components/users/users";
 import NotFound from "./pages/NotFound";
 import AuthProvider from "./components/auth/AuthProvider";
 import Carreras from "./pages/Carreras/Carreras";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
-        <Header/>
+       
         <body>
           <div className=" App">
             <Routes>
-              {/* <Route path="/" element={<PrivateRoute />}></Route> */}
+              {/* <Route path="/profile" exact element={<PrivateRoute ></PrivateRoute>}></Route> */}
               {/* creacion de rutas privadas */}
 
               <Route exact path='/'  element={<Home/>} />
@@ -45,6 +46,9 @@ function App() {
             </Routes>
           </div>
         </body>
+        <footer>
+    <Footer2/>
+    </footer> 
       </Router>
     </AuthProvider>
   );

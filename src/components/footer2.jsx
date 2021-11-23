@@ -13,8 +13,9 @@ import Header from './Header'
 const Footer2 = () => {
     
     return (
-        <div className='footer-container'>
-      <section className='footer-subscription'>
+      <div className="row">
+        <div className='  footer-container '>
+      <section className=' col md-4 footer-subscription'>
         <p className='footer-subscription-heading'>
           Dejanos tu consulta aqui. Te responderemos lo mas rapido posible
         </p>
@@ -23,7 +24,7 @@ const Footer2 = () => {
           <FormContact />
         </div>
       </section>
-      <div class='footer-links'>
+      <div class=' col md-4 footer-links'>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>Nosotros</h2>
@@ -87,7 +88,7 @@ const Footer2 = () => {
         </div>
       </section>
     </div>
-
+    </div>
         
         
     )

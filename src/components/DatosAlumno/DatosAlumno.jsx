@@ -5,6 +5,7 @@ import LeerFila from './Leerfila';
 import EditarFila from './EditarFila';
 import { nanoid } from "nanoid";
 import Switch from '@material-ui/core/Switch';
+import HeaderProfile from '../HeaderProfile';
 
 function DatosAlumno() {
     const [contacts, setContacts] = useState(data);
@@ -22,6 +23,7 @@ function DatosAlumno() {
         address:'',
         phoneNumber:'',
         email:'',
+        añoCursado:'',
     });
     const [editContactId, setEditContactId] = useState(null );
 
@@ -65,6 +67,7 @@ function DatosAlumno() {
         address:addData.address,
         phoneNumber:addData.phoneNumber,
         email:addData.email,
+        añoCursado:addData.añoCursado
        };
 
        const newContacts = [...contacts,newContact];
@@ -89,6 +92,7 @@ function DatosAlumno() {
            address:editFormData.address,
            phoneNumber:editFormData.phoneNumber,
            email: editFormData.email,
+           añoCursado:editFormData.añoCursado
 
        };
        const saveContacts = [...contacts];
@@ -111,7 +115,8 @@ function DatosAlumno() {
            fullName:contact.fullName,
            address:contact.address,
            phoneNumber:contact.phoneNumber,
-           email:contact.email
+           email:contact.email,
+           añoCursado:contact.añoCursado
        }
 
        setEditFormData(formValues)
@@ -137,17 +142,46 @@ function DatosAlumno() {
    
 
     return (
-        <div className="app-container bg-white">
+        <>
+        <header><HeaderProfile />  </header>
+          <div className="container-fluid bg-white justify-content-center align-items-center">
+        
+            <h1>Listado Alumnos</h1>
+            
+            <h2 >Añadir Alumno</h2>
+
+            <form className="data-form" onSubmit={handleAddForm}>
+            
+                <input  
+                style={{border:"1px solid black"}}
+                 type="text"
+                  name="dni" 
+                  required="required" 
+                  placeholder="coloque el dni" 
+                  onChange={handleAddData}/>
+                  
+                <input style={{border:"1px solid black"}} type="text" name="fullName" required="required" placeholder="nombre completo" onChange={handleAddData}/>
+                <input style={{border:"1px solid black"}} type="text" name="Adress" required="required" placeholder="direc"  onChange={handleAddData}/>
+                <input  style={{border:"1px solid black"}} type="text" name="phoneNumber" required="required" placeholder="numero"  onChange={handleAddData}/>
+                <input style={{border:"1px solid black"}} type="text" name="email" required="required" placeholder="email"  onChange={handleAddData}/>
+               
+                <button type="submit">Añadir</button>
+            </form>
+
+
+        <div className="table-container  ">
             <form onSubmit={ handleSaveForm}>
-            <table>
+            <table className="table-rwd">
                 <thead>
                     <tr>
                         <th>Dni</th>
-                        <th>fullName</th>
-                        <th>address</th>
-                        <th>phoneNumber</th>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Celular</th>
                         <th>email</th>
-                        <th>Actions</th>
+                        <th>Año cursado</th>
+                        <th>Acciones</th>
+                      
                       
                     </tr>
                 </thead>
@@ -179,25 +213,12 @@ function DatosAlumno() {
             </table>
             </form>
 
-            <h2>Añadir datos</h2>
-            <form className="data-form" onSubmit={handleAddForm}>
-                <input  
-                style={{border:"1px solid black"}}
-                 type="text"
-                  name="dni" 
-                  required="required" 
-                  placeholder="coloque el dni" 
-                  onChange={handleAddData}/>
-                  
-                <input style={{border:"1px solid black"}} type="text" name="fullName" required="required" placeholder="nombre completo" onChange={handleAddData}/>
-                <input style={{border:"1px solid black"}} type="text" name="Adress" required="required" placeholder="direc"  onChange={handleAddData}/>
-                <input  style={{border:"1px solid black"}} type="text" name="phoneNumber" required="required" placeholder="numero"  onChange={handleAddData}/>
-                <input style={{border:"1px solid black"}} type="text" name="email" required="required" placeholder="email"  onChange={handleAddData}/>
-               
-                <button type="submit">Añadir</button>
-            </form>
+            
+           
             
         </div>
+        </div>
+        </>
     )
 }
 

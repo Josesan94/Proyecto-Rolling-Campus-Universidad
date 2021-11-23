@@ -31,10 +31,14 @@ function EditarFila({ editFormData,handleEditFormChange,handleCancelClick }) {
                 name="email" onChange={handleEditFormChange}
                 value={editFormData.email}/>
                 </td>
+                <td><input  type="text" required="required" placeholder="Año de cursado"
+                name="añoCursado" onChange={handleEditFormChange}
+                value={editFormData.añoCursado}/>
+                </td>
                 <td>
-                    <button type="submit">Save</button>
+                    <button type="submit" className="bg-black" >Guardar</button>
                     <button type="button" onClick={handleCancelClick}>
-          Cancel
+          Cancelar
         </button>
                 </td>
         </tr>
