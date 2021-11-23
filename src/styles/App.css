@@ -92,18 +92,6 @@
   
 }
 
-.programador {
-  background-image: url(../assets/images/program2.jpg) !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  filter: opacity(1) !important;
-  filter: blur(10%) !important;
-
-
-
-
-}
 
 
 .imagenNosotros {
@@ -149,6 +137,11 @@
 
 .activas-letras h1 {
   padding-top: 10px;
+  color:white
+}
+
+.row > p {
+  color:white
 }
 
 /* conteiner flexbox fin */

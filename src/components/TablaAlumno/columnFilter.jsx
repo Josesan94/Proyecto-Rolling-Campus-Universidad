@@ -1,8 +1,8 @@
-import React , {useState}from "react";
-import { useAsyncDebounce } from "react-table";
-import tw from "twin.macro";
+import React, { useState } from 'react';
+import { useAsyncDebounce } from 'react-table';
+import tw from 'twin.macro';
 
-const SearchContainer = tw.div `
+const SearchContainer = tw.div`
   mb-6
   mt-6
   flex
@@ -17,7 +17,7 @@ const SearchText = tw.h2`
 
 `;
 
-const Input = tw.input `
+const Input = tw.input`
 
   h-8
   border-2
@@ -29,35 +29,27 @@ const Input = tw.input `
 
 `;
 
+const ColumnFilter = ({ column, setFilterColumn }) => {
+  const [filterValue, setFilterValue] = useState(setFilterColumn);
 
-const ColumnFilter = ({column,
-    setFilterColumn}) => {
+  const onChange = useAsyncDebounce(
+    (column) => setFilterColumn(column || undefined),
+    300,
+  );
 
-  
-   const [filterValue,setFilterValue] = useState(setFilterColumn);
-   
-   const onChange = useAsyncDebounce ((column) => (
-    setFilterColumn(column || undefined )
-   ),300);
-
-
-
-
-    return (
-
-        <SearchContainer>
-            <SearchText>Search:</SearchText>
-            <Input value={filterValue || ""} onChange={(e) => {
-                setFilterValue(e.target.value)
-                onChange(e.target.value);
-
-            }} 
-            placeholder= "records"
-            />
-        </SearchContainer>
-
-    )
-
-}
+  return (
+    <SearchContainer>
+      <SearchText>Search:</SearchText>
+      <Input
+        value={filterValue || ''}
+        onChange={(e) => {
+          setFilterValue(e.target.value);
+          onChange(e.target.value);
+        }}
+        placeholder="records"
+      />
+    </SearchContainer>
+  );
+};
 
 export default ColumnFilter;

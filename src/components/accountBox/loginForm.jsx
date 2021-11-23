@@ -1,6 +1,6 @@
-import { Field, useFormik } from "formik";
-import React, { useContext, useState,useEffect } from "react";
-import { Marginer } from "../marginer";
+import { Field, useFormik } from 'formik';
+import React, { useContext, useState, useEffect } from 'react';
+import { Marginer } from '../marginer';
 import {
   BoldLink,
   BoxContainer,
@@ -11,19 +11,16 @@ import {
   Input,
   MutedLink,
   ButtonSub,
-} from "./common";
-import { AccountContext } from "./accountContext";
-import * as yup from "yup";
-import axios from "axios";
-import Link from "react-router-dom";
-
+} from './common';
+import { AccountContext } from './accountContext';
+import * as yup from 'yup';
+import axios from 'axios';
+import useAuth from '../auth/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 const axiosInstance = axios.create({
-	baseURL: 'http://localhost:3001/api'
-})
-
-let axiosAuthorized;
-
+  baseURL: 'http://localhost:3001/api',
+});
 
 const validationSchema = yup.object({
   email: yup.string().required(),
@@ -31,42 +28,23 @@ const validationSchema = yup.object({
 });
 
 export function LoginForm(props) {
+  const navigate = useNavigate();
+  const { login } = useAuth();
   const { switchToSignup } = useContext(AccountContext);
   const [error, setError] = useState(null);
 
   const onSubmit = async (values) => {
-    console.log(values)
     setError(null);
 
-    axiosInstance.post('/login',values
-    )
-    .then(resp=>{
-      console.log(resp);
-
-      localStorage.setItem('token',resp.data.token);
-
-      axiosAuthorized = axios.create({
-        baseURL:'http://localhost:3001/api',
-        headers:{
-          Authorization: `Bearer ${resp.data.token}`
-        }
-      });
-
-   axiosAuthorized.get('/users').then(console.log);
-					axiosInstance.get('/users').then(console.log)
-				})
-}
-
-  
-
- 
-
-  useEffect(() => {
-    onSubmit()
-  },[])
+    axiosInstance.post('/login', values).then((resp) => {
+      localStorage.setItem('token', resp.data.token);
+      login({ ...resp.data.user, token: resp.data.token });
+      navigate('/profile');
+    });
+  };
 
   const formik = useFormik({
-    initialValues: { email: "", password: "" },
+    initialValues: { email: '', password: '' },
     validateOnBlur: true,
     onSubmit,
     validationSchema: validationSchema,
@@ -74,7 +52,7 @@ export function LoginForm(props) {
 
   return (
     <BoxContainer>
-      <FormError>{error ? error : ""}</FormError>
+      <FormError>{error ? error : ''}</FormError>
       <FormContainer onSubmit={formik.handleSubmit}>
         <FieldContainer>
           <Input
@@ -88,7 +66,7 @@ export function LoginForm(props) {
             <FieldError>
               {formik.touched.email && formik.errors.email
                 ? formik.errors.email
-                : ""}
+                : ''}
             </FieldError>
           }
         </FieldContainer>
@@ -105,31 +83,28 @@ export function LoginForm(props) {
             <FieldError>
               {formik.touched.password && formik.errors.password
                 ? formik.errors.password
-                : ""}
+                : ''}
             </FieldError>
           }
         </FieldContainer>
         <MutedLink href="#">Forgot Password?</MutedLink>
         <Marginer direction="vertical" margin={10} />
-        
+
         <ButtonSub type="submit" disabled={!formik.isValid}>
-          Ingresar 
+          Ingresar
         </ButtonSub>
-        
       </FormContainer>
-      
-     
+
       <Marginer direction="vertical" margin={10} />
-     
-      
+
       <MutedLink href="#">
         Todavia no tenes una cuenta?
         <BoldLink href="#" onClick={switchToSignup}>
           Registrate
         </BoldLink>
+        
       </MutedLink>
       <Marginer direction="vertical" margin={5} />
     </BoxContainer>
   );
 }
-

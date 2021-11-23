@@ -1,9 +1,6 @@
-import React, {useState}from "react";
+import React, { useState } from 'react';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-
-
-
 
 function LeerFila({ contact, handleEditClick, handleDeleteClick }) {
   const [state, setState] = useState({
@@ -15,15 +12,12 @@ function LeerFila({ contact, handleEditClick, handleDeleteClick }) {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
-
-
-
   return (
     <tr>
       <td data-label="Dni">{contact.dni}</td>
       <td data-label="Nombre">{contact.fullName}</td>
       <td data-label="Direccion">{contact.address}</td>
-      <td data-label="Celular">{contact.phoneNumber}</td>
+      {/* <td data-label="Celular">{contact.phoneNumber}</td> */}
       <td data-label="Email">{contact.email}</td>
       <td data-label="Año cursado">Primer año</td>
       <td data-label="Acciones">
@@ -34,19 +28,17 @@ function LeerFila({ contact, handleEditClick, handleDeleteClick }) {
           Delete
         </button> */}
         <FormControlLabel
-        control={
-          <Switch
-            checked={state.checkedB}
-            onChange={handleChange}
-            name="checkedB"
-            color="primary"
-          />
-        }
-        label=""
-        
-       
-      />
-     <p> {state.checkedB ? "usuario activo" : "usuario inactivo"}</p>
+          control={
+            <Switch
+              checked={state.checkedB}
+              onChange={handleChange}
+              name="checkedB"
+              color="primary"
+            />
+          }
+          label=""
+        />
+        <p> {state.checkedB ? 'usuario activo' : 'usuario inactivo'}</p>
       </td>
     </tr>
   );

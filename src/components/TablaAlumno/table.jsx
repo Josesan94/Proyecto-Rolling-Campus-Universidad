@@ -1,19 +1,12 @@
-import React, { useEffect, useMemo, useState } from "react";
-import tw,{styled} from 'twin.macro';
-import axios from "axios";
-import {useGlobalFilter,useFilters, useSortBy, useTable} from 'react-table';
-import GlobalFilter from './filtros'
-import FilterColumns from "./columnFilter";
+import React, { useEffect, useMemo, useState } from 'react';
+import tw, { styled } from 'twin.macro';
+import axios from 'axios';
+import { useGlobalFilter, useFilters, useSortBy, useTable } from 'react-table';
+import GlobalFilter from './filtros';
+import FilterColumns from './columnFilter';
 
 const Table = styled.table`
-margin:2rem;
-
-
-
-
-
-
- 
+  margin: 2rem;
 `;
 
 const TableHead = tw.thead`
@@ -53,114 +46,126 @@ const Button = tw.button`
   transition-colors
 `;
 
-
-
-
 const MateriasTable = (props) => {
-
-
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
+    const response = await axios
+      .get('https://fakestoreapi.com/products')
+      .catch((err) => console.log('error', err));
 
-    
-    
-    const response = await axios.get('https://fakestoreapi.com/products')
-    .catch(err => console.log("error",err))
-
-    if(response ) {
+    if (response) {
       const products = response.data;
 
-      console.log("products",products);
+      console.log('products', products);
       setProducts(products);
     }
   };
 
   useEffect(() => {
-    fetchProducts()
-  },[])
+    fetchProducts();
+  }, []);
 
-const isEven = (idx) => idx%2 === 0;
+  const isEven = (idx) => idx % 2 === 0;
 
+  const productsData = useMemo(() => [...products], [products]);
 
-  
-  
+  const productsColumns = useMemo(
+    () =>
+      products[0]
+        ? Object.keys(products[0])
+            .filter((key) => key !== 'rating')
+            .map((key) => {
+              if (key === 'image')
+                return {
+                  Header: key,
+                  accessor: key,
+                  Cell: ({ value }) => <img src={value} width={70} />,
+                };
 
-  const productsData = useMemo (()  => [...products], [products])
+              return { Header: key, accessor: key };
+            })
+        : [],
+    [products],
+  );
 
-  const productsColumns = useMemo(() => products[0] ? Object.keys(products[0]).filter((key) => key !== "rating")
-  .map((key) =>{
-    if(key === "image") return {
-      Header:key,
-      accessor:key,
-      Cell: ({ value }) => <img  src={value} width={70} />,
-      
- 
-    }
-
-    return {Header:key, accessor:key};
-  }) : [ ], [products]);
-
-  const tableHooks = ( hooks) => {
+  const tableHooks = (hooks) => {
     hooks.visibleColumns.push((columns) => [
       ...columns,
       {
-        id:"Edit",
-        Header:'Edit',
-        Cell: ({row} ) => (
-          <Button onClick={() => alert("Editing:"+ row.values.category)}>
+        id: 'Edit',
+        Header: 'Edit',
+        Cell: ({ row }) => (
+          <Button onClick={() => alert('Editing:' + row.values.category)}>
             Edit
           </Button>
-        )
-      }
-    ])
-  }
+        ),
+      },
+    ]);
+  };
 
-  const tableInstance = useTable({columns:productsColumns, data:productsData },useFilters, useGlobalFilter, tableHooks, useSortBy)
+  const tableInstance = useTable(
+    { columns: productsColumns, data: productsData },
+    useFilters,
+    useGlobalFilter,
+    tableHooks,
+    useSortBy,
+  );
 
-   const { getTableProps, getTableBodyProps,headerGroups,rows,prepareRow, preGlobalFilteredRows, setGlobalFilter , state } = tableInstance ;
-
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    preGlobalFilteredRows,
+    setGlobalFilter,
+    state,
+  } = tableInstance;
 
   return (
     <>
-    <GlobalFilter preGlobalFilteredRows={preGlobalFilteredRows} setGlobalFilter ={setGlobalFilter} globalFilter ={state.globalFilter} />
-    <Table {...getTableProps()}>
-     <TableHead>
-       {headerGroups.map((headerGroup) => (
-         <TableRow {...headerGroup.getHeaderGroupProps()} >
-           {headerGroup.headers.map((column) => (
-             <TableHeader {...column.getHeaderProps(column.getSortByToggleProps())}>
-               {column.render("Header")}
-               {column.isSorted ? (column.isSortedDesc ? "▼" :"▲") : ""}
-             </TableHeader>
-           ))}
-
-         </TableRow>
-       ))}
-     </TableHead>
-     <TableBody   {...getTableBodyProps()}>
-       {rows.map((row,idx) => {
-         prepareRow(row)
-           
-         return (
-         <TableRow {...row.getRowProps()} className={isEven(idx) ? "bg-dark bg-opacity-10" : ""}
-         >
-
-           { row.cells.map((cell, idx) => (
-            <TableData  {...cell.getCellProps()}>
-              {cell.render("Cell")}
-            </TableData>
+      <GlobalFilter
+        preGlobalFilteredRows={preGlobalFilteredRows}
+        setGlobalFilter={setGlobalFilter}
+        globalFilter={state.globalFilter}
+      />
+      <Table {...getTableProps()}>
+        <TableHead>
+          {headerGroups.map((headerGroup) => (
+            <TableRow {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <TableHeader
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                >
+                  {column.render('Header')}
+                  {column.isSorted ? (column.isSortedDesc ? '▼' : '▲') : ''}
+                </TableHeader>
+              ))}
+            </TableRow>
           ))}
-          </TableRow> )
-        })}
+        </TableHead>
+        <TableBody {...getTableBodyProps()}>
+          {rows.map((row, idx) => {
+            prepareRow(row);
 
-     </TableBody>
-    </Table>
+            return (
+              <TableRow
+                {...row.getRowProps()}
+                className={isEven(idx) ? 'bg-dark bg-opacity-10' : ''}
+              >
+                {row.cells.map((cell, idx) => (
+                  <TableData {...cell.getCellProps()}>
+                    {cell.render('Cell')}
+                  </TableData>
+                ))}
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
     </>
-  )
+  );
+};
 
-
-}
-
-
-export default  MateriasTable;
+export default MateriasTable;
