@@ -1,4 +1,5 @@
 import React from 'react'
+import imagen from '../assets/images/IMG_3582-670x270.jpg'
 
 function BecasPage() {
     return (
@@ -14,7 +15,8 @@ function BecasPage() {
             <br></br>
 
             *<div class="container-fluid ">
-                <p>INSERTAR IMAGEN</p>
+                <img className="imagenNosotros" src={imagen} /> 
+                
             </div>
 
             <br></br>
