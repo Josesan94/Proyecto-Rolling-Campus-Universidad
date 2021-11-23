@@ -113,8 +113,10 @@
 }
 
 .activas > img {
-  height: 300px;
+  height: 100%;
   width: 100%;
+  background-attachment: fixed !important;
+  background-size: cover !important;
 }
 
 .activas-letras{
